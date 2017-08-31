@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<types arch="64">
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>426e8d38eab05b776d6af6c897d11c900</typeID>
+    <tagName>type_0</tagName>
+    <sizeInBytes>40</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>INT32</sugaredType>
+        <desugaredType>INT32</desugaredType>
+        <sizeInBits>32</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="2">
+        <name>dont_care</name>
+        <sugaredType>INT64</sugaredType>
+        <desugaredType>INT64</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>32</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+</types>

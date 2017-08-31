@@ -1,0 +1,11 @@
+digraph G {
+	"dsnaming.DsOliMetaBoxGraphVertexEP@12c7835b" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@2a30a4b" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 387 tag: ptr off: 0:16</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (95)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexEP@12c7835b" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@b9d1141" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 387 tag: ptr off: 0:8</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (95)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexBoxes@2a30a4b" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@b9d1141" [dir = none, label = <<TABLE BORDER="0" ALIGN="left" BGCOLOR="#CCCCCC" COLOR="black" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 387 tag: ovl off: 8:16</TD></TR><TR><TD ALIGN="left" BGCOLOR="#99CC00">SHN</TD><TD ALIGN="left" BGCOLOR="#99CC00">270 (90)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#66CCFF">BT</TD><TD ALIGN="left" BGCOLOR="#66CCFF">12 (6)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#00FFCC">I1o</TD><TD ALIGN="left" BGCOLOR="#00FFCC">3 (3)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (99)</TD></TR></TABLE>>, color = "#99CC00"]
+	subgraph connected_vertices {
+		rankdir = LR
+		"dsnaming.DsOliMetaBoxGraphVertexEP@12c7835b"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexEP@12c7835b</TD></TR><TR><TD COLSPAN="2">ep: 124 start: 387 end: 539 aggCnt: 95</TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@b9d1141"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@b9d1141</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@8): dont_care: Set(2) </TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@2a30a4b"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@2a30a4b</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@16): dont_care: Set(5) </TD></TR></TABLE>>, shape = none]
+	}
+}

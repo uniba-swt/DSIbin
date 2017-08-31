@@ -1,0 +1,46 @@
+Function = 480
+
+Function = 4b0
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x20: INT64;
+-0x28: VOID*;
+-0x30: VOID*;
+-0x38: INT64;
+-0x48: struct{
+         0x0: VOID*;
+         0x8: INT64;
+       };
+-0x78: INT32;
+
+Function = 4d0
+
+Function = 4f0
+-0x8: VOID*;
+-0x10: INT64;
+
+Function = 500
+
+Function = 540
+
+Function = 5b0
+
+Function = 5d0
+
+Function = 691
+
+Function = 6d8
+-0x8: INT64;
+-0x10: VOID*;
+
+Function = 7d0
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x20: INT64;
+-0x28: INT64;
+-0x30: INT64;
+
+Function = 844
+

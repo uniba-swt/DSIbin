@@ -1,0 +1,590 @@
+
+linux-kernel-list-howard-short/linux-kernel-list-howard-short:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400488 <_init>:
+  400488:	48 83 ec 08          	sub    $0x8,%rsp
+  40048c:	48 8b 05 65 0b 20 00 	mov    0x200b65(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  400493:	48 85 c0             	test   %rax,%rax
+  400496:	74 05                	je     40049d <_init+0x15>
+  400498:	e8 53 00 00 00       	callq  4004f0 <__gmon_start__@plt>
+  40049d:	48 83 c4 08          	add    $0x8,%rsp
+  4004a1:	c3                   	retq   
+
+Disassembly of section .plt:
+
+00000000004004b0 <free@plt-0x10>:
+  4004b0:	ff 35 52 0b 20 00    	pushq  0x200b52(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4004b6:	ff 25 54 0b 20 00    	jmpq   *0x200b54(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4004bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004004c0 <free@plt>:
+  4004c0:	ff 25 52 0b 20 00    	jmpq   *0x200b52(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  4004c6:	68 00 00 00 00       	pushq  $0x0
+  4004cb:	e9 e0 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+00000000004004d0 <printf@plt>:
+  4004d0:	ff 25 4a 0b 20 00    	jmpq   *0x200b4a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  4004d6:	68 01 00 00 00       	pushq  $0x1
+  4004db:	e9 d0 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+00000000004004e0 <__libc_start_main@plt>:
+  4004e0:	ff 25 42 0b 20 00    	jmpq   *0x200b42(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  4004e6:	68 02 00 00 00       	pushq  $0x2
+  4004eb:	e9 c0 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+00000000004004f0 <__gmon_start__@plt>:
+  4004f0:	ff 25 3a 0b 20 00    	jmpq   *0x200b3a(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  4004f6:	68 03 00 00 00       	pushq  $0x3
+  4004fb:	e9 b0 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+0000000000400500 <malloc@plt>:
+  400500:	ff 25 32 0b 20 00    	jmpq   *0x200b32(%rip)        # 601038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400506:	68 04 00 00 00       	pushq  $0x4
+  40050b:	e9 a0 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+0000000000400510 <rand@plt>:
+  400510:	ff 25 2a 0b 20 00    	jmpq   *0x200b2a(%rip)        # 601040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400516:	68 05 00 00 00       	pushq  $0x5
+  40051b:	e9 90 ff ff ff       	jmpq   4004b0 <_init+0x28>
+
+Disassembly of section .text:
+
+0000000000400520 <_start>:
+  400520:	31 ed                	xor    %ebp,%ebp
+  400522:	49 89 d1             	mov    %rdx,%r9
+  400525:	5e                   	pop    %rsi
+  400526:	48 89 e2             	mov    %rsp,%rdx
+  400529:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40052d:	50                   	push   %rax
+  40052e:	54                   	push   %rsp
+  40052f:	49 c7 c0 10 0a 40 00 	mov    $0x400a10,%r8
+  400536:	48 c7 c1 a0 09 40 00 	mov    $0x4009a0,%rcx
+  40053d:	48 c7 c7 43 07 40 00 	mov    $0x400743,%rdi
+  400544:	e8 97 ff ff ff       	callq  4004e0 <__libc_start_main@plt>
+  400549:	f4                   	hlt    
+  40054a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400550 <deregister_tm_clones>:
+  400550:	b8 5f 10 60 00       	mov    $0x60105f,%eax
+  400555:	55                   	push   %rbp
+  400556:	48 2d 58 10 60 00    	sub    $0x601058,%rax
+  40055c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400560:	48 89 e5             	mov    %rsp,%rbp
+  400563:	77 02                	ja     400567 <deregister_tm_clones+0x17>
+  400565:	5d                   	pop    %rbp
+  400566:	c3                   	retq   
+  400567:	b8 00 00 00 00       	mov    $0x0,%eax
+  40056c:	48 85 c0             	test   %rax,%rax
+  40056f:	74 f4                	je     400565 <deregister_tm_clones+0x15>
+  400571:	5d                   	pop    %rbp
+  400572:	bf 58 10 60 00       	mov    $0x601058,%edi
+  400577:	ff e0                	jmpq   *%rax
+  400579:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400580 <register_tm_clones>:
+  400580:	b8 58 10 60 00       	mov    $0x601058,%eax
+  400585:	55                   	push   %rbp
+  400586:	48 2d 58 10 60 00    	sub    $0x601058,%rax
+  40058c:	48 c1 f8 03          	sar    $0x3,%rax
+  400590:	48 89 e5             	mov    %rsp,%rbp
+  400593:	48 89 c2             	mov    %rax,%rdx
+  400596:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  40059a:	48 01 d0             	add    %rdx,%rax
+  40059d:	48 d1 f8             	sar    %rax
+  4005a0:	75 02                	jne    4005a4 <register_tm_clones+0x24>
+  4005a2:	5d                   	pop    %rbp
+  4005a3:	c3                   	retq   
+  4005a4:	ba 00 00 00 00       	mov    $0x0,%edx
+  4005a9:	48 85 d2             	test   %rdx,%rdx
+  4005ac:	74 f4                	je     4005a2 <register_tm_clones+0x22>
+  4005ae:	5d                   	pop    %rbp
+  4005af:	48 89 c6             	mov    %rax,%rsi
+  4005b2:	bf 58 10 60 00       	mov    $0x601058,%edi
+  4005b7:	ff e2                	jmpq   *%rdx
+  4005b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000004005c0 <__do_global_dtors_aux>:
+  4005c0:	80 3d 91 0a 20 00 00 	cmpb   $0x0,0x200a91(%rip)        # 601058 <__TMC_END__>
+  4005c7:	75 11                	jne    4005da <__do_global_dtors_aux+0x1a>
+  4005c9:	55                   	push   %rbp
+  4005ca:	48 89 e5             	mov    %rsp,%rbp
+  4005cd:	e8 7e ff ff ff       	callq  400550 <deregister_tm_clones>
+  4005d2:	5d                   	pop    %rbp
+  4005d3:	c6 05 7e 0a 20 00 01 	movb   $0x1,0x200a7e(%rip)        # 601058 <__TMC_END__>
+  4005da:	f3 c3                	repz retq 
+  4005dc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004005e0 <frame_dummy>:
+  4005e0:	48 83 3d 38 08 20 00 	cmpq   $0x0,0x200838(%rip)        # 600e20 <__JCR_END__>
+  4005e7:	00 
+  4005e8:	74 1e                	je     400608 <frame_dummy+0x28>
+  4005ea:	b8 00 00 00 00       	mov    $0x0,%eax
+  4005ef:	48 85 c0             	test   %rax,%rax
+  4005f2:	74 14                	je     400608 <frame_dummy+0x28>
+  4005f4:	55                   	push   %rbp
+  4005f5:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  4005fa:	48 89 e5             	mov    %rsp,%rbp
+  4005fd:	ff d0                	callq  *%rax
+  4005ff:	5d                   	pop    %rbp
+  400600:	e9 7b ff ff ff       	jmpq   400580 <register_tm_clones>
+  400605:	0f 1f 00             	nopl   (%rax)
+  400608:	e9 73 ff ff ff       	jmpq   400580 <register_tm_clones>
+
+000000000040060d <__list_add>:
+ * the prev/next entries already!
+ */
+static inline void __list_add(struct list_head *node,
+			      struct list_head *prev,
+			      struct list_head *next)
+{
+  40060d:	55                   	push   %rbp
+  40060e:	48 89 e5             	mov    %rsp,%rbp
+  400611:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400615:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  400619:	48 89 55 e8          	mov    %rdx,-0x18(%rbp)
+	next->prev = node;
+  40061d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400621:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  400625:	48 89 50 08          	mov    %rdx,0x8(%rax)
+	node->next = next;
+  400629:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40062d:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  400631:	48 89 10             	mov    %rdx,(%rax)
+	node->prev = prev;
+  400634:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400638:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  40063c:	48 89 50 08          	mov    %rdx,0x8(%rax)
+	prev->next = node;
+  400640:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400644:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  400648:	48 89 10             	mov    %rdx,(%rax)
+}
+  40064b:	5d                   	pop    %rbp
+  40064c:	c3                   	retq   
+
+000000000040064d <list_add>:
+ *
+ * Insert a node entry after the specified head.
+ * This is good for implementing stacks.
+ */
+static inline void list_add(struct list_head *node, struct list_head *head)
+{
+  40064d:	55                   	push   %rbp
+  40064e:	48 89 e5             	mov    %rsp,%rbp
+  400651:	48 83 ec 10          	sub    $0x10,%rsp
+  400655:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400659:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+	__list_add(node, head, head->next);
+  40065d:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400661:	48 8b 10             	mov    (%rax),%rdx
+  400664:	48 8b 4d f0          	mov    -0x10(%rbp),%rcx
+  400668:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40066c:	48 89 ce             	mov    %rcx,%rsi
+  40066f:	48 89 c7             	mov    %rax,%rdi
+  400672:	e8 96 ff ff ff       	callq  40060d <__list_add>
+}
+  400677:	c9                   	leaveq 
+  400678:	c3                   	retq   
+
+0000000000400679 <__list_del>:
+ *
+ * This is only for internal list manipulation where we know
+ * the prev/next entries already!
+ */
+static inline void __list_del(struct list_head * prev, struct list_head * next)
+{
+  400679:	55                   	push   %rbp
+  40067a:	48 89 e5             	mov    %rsp,%rbp
+  40067d:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400681:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+	next->prev = prev;
+  400685:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400689:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  40068d:	48 89 50 08          	mov    %rdx,0x8(%rax)
+	prev->next = next;
+  400691:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400695:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  400699:	48 89 10             	mov    %rdx,(%rax)
+}
+  40069c:	5d                   	pop    %rbp
+  40069d:	c3                   	retq   
+
+000000000040069e <list_del>:
+ * @entry: the element to delete from the list.
+ * Note: list_empty on entry does not return true after this, the entry is
+ * in an undefined state.
+ */
+static inline void list_del(struct list_head *entry)
+{
+  40069e:	55                   	push   %rbp
+  40069f:	48 89 e5             	mov    %rsp,%rbp
+  4006a2:	48 83 ec 08          	sub    $0x8,%rsp
+  4006a6:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+	__list_del(entry->prev, entry->next);
+  4006aa:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006ae:	48 8b 10             	mov    (%rax),%rdx
+  4006b1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006b5:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4006b9:	48 89 d6             	mov    %rdx,%rsi
+  4006bc:	48 89 c7             	mov    %rax,%rdi
+  4006bf:	e8 b5 ff ff ff       	callq  400679 <__list_del>
+	entry->next = LIST_POISON1;
+  4006c4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006c8:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+	entry->prev = LIST_POISON2;
+  4006cf:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006d3:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  4006da:	00 
+}
+  4006db:	c9                   	leaveq 
+  4006dc:	c3                   	retq   
+
+00000000004006dd <alloc_and_link>:
+	//int *payload;
+	int payload;
+	inner2_t inner2;
+} list_element;
+
+int alloc_and_link(int yy, int zz, int xx, int payload, struct list_head* head){
+  4006dd:	55                   	push   %rbp
+  4006de:	48 89 e5             	mov    %rsp,%rbp
+  4006e1:	48 83 ec 30          	sub    $0x30,%rsp
+  4006e5:	89 7d ec             	mov    %edi,-0x14(%rbp)
+  4006e8:	89 75 e8             	mov    %esi,-0x18(%rbp)
+  4006eb:	89 55 e4             	mov    %edx,-0x1c(%rbp)
+  4006ee:	89 4d e0             	mov    %ecx,-0x20(%rbp)
+  4006f1:	4c 89 45 d8          	mov    %r8,-0x28(%rbp)
+	list_element *pitem;
+
+	pitem = (list_element*)malloc(sizeof(list_element));
+  4006f5:	bf 28 00 00 00       	mov    $0x28,%edi
+  4006fa:	e8 01 fe ff ff       	callq  400500 <malloc@plt>
+  4006ff:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+	//memset(pitem, 0, sizeof(list_element));
+	pitem->payload = payload;
+  400703:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400707:	8b 55 e0             	mov    -0x20(%rbp),%edx
+  40070a:	89 10                	mov    %edx,(%rax)
+	pitem->inner2.xx = xx;
+  40070c:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400710:	8b 55 e4             	mov    -0x1c(%rbp),%edx
+  400713:	89 50 08             	mov    %edx,0x8(%rax)
+	pitem->inner2.inner1.yy = yy;
+  400716:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40071a:	8b 55 ec             	mov    -0x14(%rbp),%edx
+  40071d:	89 50 10             	mov    %edx,0x10(%rax)
+	pitem->inner2.inner1.zz = zz;
+  400720:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400724:	8b 55 e8             	mov    -0x18(%rbp),%edx
+  400727:	89 50 14             	mov    %edx,0x14(%rax)
+	list_add(&(pitem->inner2.inner1.list), head);
+  40072a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40072e:	48 8d 50 18          	lea    0x18(%rax),%rdx
+  400732:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  400736:	48 89 c6             	mov    %rax,%rsi
+  400739:	48 89 d7             	mov    %rdx,%rdi
+  40073c:	e8 0c ff ff ff       	callq  40064d <list_add>
+}
+  400741:	c9                   	leaveq 
+  400742:	c3                   	retq   
+
+0000000000400743 <main>:
+
+int main(int argc, char* argv[]) 
+{
+  400743:	55                   	push   %rbp
+  400744:	48 89 e5             	mov    %rsp,%rbp
+  400747:	41 55                	push   %r13
+  400749:	41 54                	push   %r12
+  40074b:	53                   	push   %rbx
+  40074c:	48 83 ec 78          	sub    $0x78,%rsp
+  400750:	89 bd 7c ff ff ff    	mov    %edi,-0x84(%rbp)
+  400756:	48 89 b5 70 ff ff ff 	mov    %rsi,-0x90(%rbp)
+
+	int i;
+	int payload02 = 2;
+  40075d:	c7 45 94 02 00 00 00 	movl   $0x2,-0x6c(%rbp)
+
+	struct list_head *pnext;
+	struct list_head phead;
+
+
+	INIT_LIST_HEAD(&phead);
+  400764:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400768:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  40076c:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400770:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+
+	for (i=0; i<10; i++){
+  400774:	c7 45 88 00 00 00 00 	movl   $0x0,-0x78(%rbp)
+  40077b:	e9 c4 00 00 00       	jmpq   400844 <main+0x101>
+		alloc_and_link(rand()%10,rand()%10, rand()%10, rand()%10, &phead);
+  400780:	e8 8b fd ff ff       	callq  400510 <rand@plt>
+  400785:	89 c1                	mov    %eax,%ecx
+  400787:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  40078c:	89 c8                	mov    %ecx,%eax
+  40078e:	f7 ea                	imul   %edx
+  400790:	c1 fa 02             	sar    $0x2,%edx
+  400793:	89 c8                	mov    %ecx,%eax
+  400795:	c1 f8 1f             	sar    $0x1f,%eax
+  400798:	29 c2                	sub    %eax,%edx
+  40079a:	41 89 d5             	mov    %edx,%r13d
+  40079d:	44 89 e8             	mov    %r13d,%eax
+  4007a0:	c1 e0 02             	shl    $0x2,%eax
+  4007a3:	44 01 e8             	add    %r13d,%eax
+  4007a6:	01 c0                	add    %eax,%eax
+  4007a8:	29 c1                	sub    %eax,%ecx
+  4007aa:	41 89 cd             	mov    %ecx,%r13d
+  4007ad:	e8 5e fd ff ff       	callq  400510 <rand@plt>
+  4007b2:	89 c1                	mov    %eax,%ecx
+  4007b4:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  4007b9:	89 c8                	mov    %ecx,%eax
+  4007bb:	f7 ea                	imul   %edx
+  4007bd:	c1 fa 02             	sar    $0x2,%edx
+  4007c0:	89 c8                	mov    %ecx,%eax
+  4007c2:	c1 f8 1f             	sar    $0x1f,%eax
+  4007c5:	29 c2                	sub    %eax,%edx
+  4007c7:	41 89 d4             	mov    %edx,%r12d
+  4007ca:	44 89 e0             	mov    %r12d,%eax
+  4007cd:	c1 e0 02             	shl    $0x2,%eax
+  4007d0:	44 01 e0             	add    %r12d,%eax
+  4007d3:	01 c0                	add    %eax,%eax
+  4007d5:	29 c1                	sub    %eax,%ecx
+  4007d7:	41 89 cc             	mov    %ecx,%r12d
+  4007da:	e8 31 fd ff ff       	callq  400510 <rand@plt>
+  4007df:	89 c1                	mov    %eax,%ecx
+  4007e1:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  4007e6:	89 c8                	mov    %ecx,%eax
+  4007e8:	f7 ea                	imul   %edx
+  4007ea:	c1 fa 02             	sar    $0x2,%edx
+  4007ed:	89 c8                	mov    %ecx,%eax
+  4007ef:	c1 f8 1f             	sar    $0x1f,%eax
+  4007f2:	89 d3                	mov    %edx,%ebx
+  4007f4:	29 c3                	sub    %eax,%ebx
+  4007f6:	89 d8                	mov    %ebx,%eax
+  4007f8:	c1 e0 02             	shl    $0x2,%eax
+  4007fb:	01 d8                	add    %ebx,%eax
+  4007fd:	01 c0                	add    %eax,%eax
+  4007ff:	89 cb                	mov    %ecx,%ebx
+  400801:	29 c3                	sub    %eax,%ebx
+  400803:	e8 08 fd ff ff       	callq  400510 <rand@plt>
+  400808:	89 c1                	mov    %eax,%ecx
+  40080a:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  40080f:	89 c8                	mov    %ecx,%eax
+  400811:	f7 ea                	imul   %edx
+  400813:	c1 fa 02             	sar    $0x2,%edx
+  400816:	89 c8                	mov    %ecx,%eax
+  400818:	c1 f8 1f             	sar    $0x1f,%eax
+  40081b:	89 d7                	mov    %edx,%edi
+  40081d:	29 c7                	sub    %eax,%edi
+  40081f:	89 f8                	mov    %edi,%eax
+  400821:	c1 e0 02             	shl    $0x2,%eax
+  400824:	01 f8                	add    %edi,%eax
+  400826:	01 c0                	add    %eax,%eax
+  400828:	89 cf                	mov    %ecx,%edi
+  40082a:	29 c7                	sub    %eax,%edi
+  40082c:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400830:	49 89 c0             	mov    %rax,%r8
+  400833:	44 89 e9             	mov    %r13d,%ecx
+  400836:	44 89 e2             	mov    %r12d,%edx
+  400839:	89 de                	mov    %ebx,%esi
+  40083b:	e8 9d fe ff ff       	callq  4006dd <alloc_and_link>
+	struct list_head phead;
+
+
+	INIT_LIST_HEAD(&phead);
+
+	for (i=0; i<10; i++){
+  400840:	83 45 88 01          	addl   $0x1,-0x78(%rbp)
+  400844:	83 7d 88 09          	cmpl   $0x9,-0x78(%rbp)
+  400848:	0f 8e 32 ff ff ff    	jle    400780 <main+0x3d>
+		alloc_and_link(rand()%10,rand()%10, rand()%10, rand()%10, &phead);
+	}
+	
+	int sum = 0;
+  40084e:	c7 45 90 00 00 00 00 	movl   $0x0,-0x70(%rbp)
+	list_for_each(pnext, &phead){
+  400855:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  400859:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+  40085d:	e9 96 00 00 00       	jmpq   4008f8 <main+0x1b5>
+		pinner1 = list_entry(pnext, inner1_t, list);
+  400862:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  400866:	48 89 45 a0          	mov    %rax,-0x60(%rbp)
+  40086a:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+  40086e:	48 83 e8 08          	sub    $0x8,%rax
+  400872:	48 89 45 a8          	mov    %rax,-0x58(%rbp)
+		pinner2 = list_entry(pinner1, inner2_t, inner1);
+  400876:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+  40087a:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+  40087e:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  400882:	48 83 e8 08          	sub    $0x8,%rax
+  400886:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+		pelem = list_entry(pinner2, list_element, inner2);
+  40088a:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  40088e:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+  400892:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+  400896:	48 83 e8 08          	sub    $0x8,%rax
+  40089a:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+		offset = ((unsigned long)pnext - (unsigned long)pelem);
+  40089e:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  4008a2:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  4008a6:	48 29 c2             	sub    %rax,%rdx
+  4008a9:	48 89 d0             	mov    %rdx,%rax
+  4008ac:	89 45 8c             	mov    %eax,-0x74(%rbp)
+		printf("offset : %lx, pnext : %lx, pelem  : %lx\n",offset, pnext, pelem);
+  4008af:	48 8b 4d c8          	mov    -0x38(%rbp),%rcx
+  4008b3:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  4008b7:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  4008ba:	89 c6                	mov    %eax,%esi
+  4008bc:	bf 28 0a 40 00       	mov    $0x400a28,%edi
+  4008c1:	b8 00 00 00 00       	mov    $0x0,%eax
+  4008c6:	e8 05 fc ff ff       	callq  4004d0 <printf@plt>
+		sum += pelem->payload + pinner2->xx + pinner1->yy + pinner1->zz;
+  4008cb:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  4008cf:	8b 10                	mov    (%rax),%edx
+  4008d1:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  4008d5:	8b 00                	mov    (%rax),%eax
+  4008d7:	01 c2                	add    %eax,%edx
+  4008d9:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+  4008dd:	8b 00                	mov    (%rax),%eax
+  4008df:	01 c2                	add    %eax,%edx
+  4008e1:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+  4008e5:	8b 40 04             	mov    0x4(%rax),%eax
+  4008e8:	01 d0                	add    %edx,%eax
+  4008ea:	01 45 90             	add    %eax,-0x70(%rbp)
+	for (i=0; i<10; i++){
+		alloc_and_link(rand()%10,rand()%10, rand()%10, rand()%10, &phead);
+	}
+	
+	int sum = 0;
+	list_for_each(pnext, &phead){
+  4008ed:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  4008f1:	48 8b 00             	mov    (%rax),%rax
+  4008f4:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+  4008f8:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4008fc:	48 39 45 98          	cmp    %rax,-0x68(%rbp)
+  400900:	0f 85 5c ff ff ff    	jne    400862 <main+0x11f>
+		pelem = list_entry(pinner2, list_element, inner2);
+		offset = ((unsigned long)pnext - (unsigned long)pelem);
+		printf("offset : %lx, pnext : %lx, pelem  : %lx\n",offset, pnext, pelem);
+		sum += pelem->payload + pinner2->xx + pinner1->yy + pinner1->zz;
+	}
+	pnext = phead.next;
+  400906:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  40090a:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+	while (pnext!=&phead){
+  40090e:	eb 54                	jmp    400964 <main+0x221>
+		pelem = (list_element*) ((unsigned long)pnext - (unsigned long)offset);
+  400910:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  400914:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  400917:	48 29 c2             	sub    %rax,%rdx
+  40091a:	48 89 d0             	mov    %rdx,%rax
+  40091d:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+		printf("New, offset : %lx, pnext : %lx, pelem : %lx\n", offset, pnext, pelem);
+  400921:	48 8b 4d c8          	mov    -0x38(%rbp),%rcx
+  400925:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+  400929:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  40092c:	89 c6                	mov    %eax,%esi
+  40092e:	bf 58 0a 40 00       	mov    $0x400a58,%edi
+  400933:	b8 00 00 00 00       	mov    $0x0,%eax
+  400938:	e8 93 fb ff ff       	callq  4004d0 <printf@plt>
+		/*pinner1 = list_entry(pnext, inner1_t, list);
+		pinner2 = list_entry(pinner1, inner2_t, inner1);
+		pelem = list_entry(pinner2, list_element, inner2);*/
+		pnext = pnext->next;
+  40093d:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+  400941:	48 8b 00             	mov    (%rax),%rax
+  400944:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+		list_del(&(pelem->inner2.inner1.list));
+  400948:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  40094c:	48 83 c0 18          	add    $0x18,%rax
+  400950:	48 89 c7             	mov    %rax,%rdi
+  400953:	e8 46 fd ff ff       	callq  40069e <list_del>
+		free(pelem);
+  400958:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  40095c:	48 89 c7             	mov    %rax,%rdi
+  40095f:	e8 5c fb ff ff       	callq  4004c0 <free@plt>
+		offset = ((unsigned long)pnext - (unsigned long)pelem);
+		printf("offset : %lx, pnext : %lx, pelem  : %lx\n",offset, pnext, pelem);
+		sum += pelem->payload + pinner2->xx + pinner1->yy + pinner1->zz;
+	}
+	pnext = phead.next;
+	while (pnext!=&phead){
+  400964:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400968:	48 39 45 98          	cmp    %rax,-0x68(%rbp)
+  40096c:	75 a2                	jne    400910 <main+0x1cd>
+		pelem = list_entry(pinner2, list_element, inner2);*/
+		pnext = pnext->next;
+		list_del(&(pelem->inner2.inner1.list));
+		free(pelem);
+	}
+	printf("sum %d\n", sum);
+  40096e:	8b 45 90             	mov    -0x70(%rbp),%eax
+  400971:	89 c6                	mov    %eax,%esi
+  400973:	bf 85 0a 40 00       	mov    $0x400a85,%edi
+  400978:	b8 00 00 00 00       	mov    $0x0,%eax
+  40097d:	e8 4e fb ff ff       	callq  4004d0 <printf@plt>
+	return 0;
+  400982:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  400987:	48 83 c4 78          	add    $0x78,%rsp
+  40098b:	5b                   	pop    %rbx
+  40098c:	41 5c                	pop    %r12
+  40098e:	41 5d                	pop    %r13
+  400990:	5d                   	pop    %rbp
+  400991:	c3                   	retq   
+  400992:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  400999:	00 00 00 
+  40099c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004009a0 <__libc_csu_init>:
+  4009a0:	41 57                	push   %r15
+  4009a2:	41 89 ff             	mov    %edi,%r15d
+  4009a5:	41 56                	push   %r14
+  4009a7:	49 89 f6             	mov    %rsi,%r14
+  4009aa:	41 55                	push   %r13
+  4009ac:	49 89 d5             	mov    %rdx,%r13
+  4009af:	41 54                	push   %r12
+  4009b1:	4c 8d 25 58 04 20 00 	lea    0x200458(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  4009b8:	55                   	push   %rbp
+  4009b9:	48 8d 2d 58 04 20 00 	lea    0x200458(%rip),%rbp        # 600e18 <__init_array_end>
+  4009c0:	53                   	push   %rbx
+  4009c1:	4c 29 e5             	sub    %r12,%rbp
+  4009c4:	31 db                	xor    %ebx,%ebx
+  4009c6:	48 c1 fd 03          	sar    $0x3,%rbp
+  4009ca:	48 83 ec 08          	sub    $0x8,%rsp
+  4009ce:	e8 b5 fa ff ff       	callq  400488 <_init>
+  4009d3:	48 85 ed             	test   %rbp,%rbp
+  4009d6:	74 1e                	je     4009f6 <__libc_csu_init+0x56>
+  4009d8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4009df:	00 
+  4009e0:	4c 89 ea             	mov    %r13,%rdx
+  4009e3:	4c 89 f6             	mov    %r14,%rsi
+  4009e6:	44 89 ff             	mov    %r15d,%edi
+  4009e9:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  4009ed:	48 83 c3 01          	add    $0x1,%rbx
+  4009f1:	48 39 eb             	cmp    %rbp,%rbx
+  4009f4:	75 ea                	jne    4009e0 <__libc_csu_init+0x40>
+  4009f6:	48 83 c4 08          	add    $0x8,%rsp
+  4009fa:	5b                   	pop    %rbx
+  4009fb:	5d                   	pop    %rbp
+  4009fc:	41 5c                	pop    %r12
+  4009fe:	41 5d                	pop    %r13
+  400a00:	41 5e                	pop    %r14
+  400a02:	41 5f                	pop    %r15
+  400a04:	c3                   	retq   
+  400a05:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  400a0c:	00 00 00 00 
+
+0000000000400a10 <__libc_csu_fini>:
+  400a10:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000400a14 <_fini>:
+  400a14:	48 83 ec 08          	sub    $0x8,%rsp
+  400a18:	48 83 c4 08          	add    $0x8,%rsp
+  400a1c:	c3                   	retq   

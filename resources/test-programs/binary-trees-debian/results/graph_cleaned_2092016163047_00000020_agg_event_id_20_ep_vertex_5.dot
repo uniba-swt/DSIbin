@@ -1,0 +1,11 @@
+digraph G {
+	"dsnaming.DsOliMetaBoxGraphVertexEP@1c98fb4d" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@96f9b8c" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 2494 tag: ptr off: 0:0</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (1895)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexEP@1c98fb4d" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@202b8614" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 2494 tag: ptr off: 0:8</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (1895)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexBoxes@96f9b8c" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@202b8614" [dir = none, label = <<TABLE BORDER="0" ALIGN="left" BGCOLOR="#CCCCCC" COLOR="black" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 2494 tag: ovl off: 8:0</TD></TR><TR><TD ALIGN="left" BGCOLOR="#66CCFF">BT</TD><TD ALIGN="left" BGCOLOR="#66CCFF">11370 (5685)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (5685)</TD></TR></TABLE>>, color = "#66CCFF"]
+	subgraph connected_vertices {
+		rankdir = LR
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@202b8614"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@202b8614</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@8): dont_care: Set(75, 79) </TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@96f9b8c"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@96f9b8c</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@0): dont_care: Set(77, 66) </TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexEP@1c98fb4d"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexEP@1c98fb4d</TD></TR><TR><TD COLSPAN="2">ep: 5 start: 2494 end: 5436 aggCnt: 1895</TD></TR></TABLE>>, shape = none]
+	}
+}

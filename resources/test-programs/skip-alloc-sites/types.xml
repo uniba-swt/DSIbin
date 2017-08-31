@@ -1,0 +1,38 @@
+<types arch="64">
+<compound mode="struct">
+<isStack>0</isStack>
+<offset>0</offset>
+<typeID>a773dcf41dd93d931e1e428df840fda800</typeID>
+<tagName>type_0</tagName>
+<sizeInBytes>24</sizeInBytes>
+<location file="-" line="0" col="0"/>
+<fields>
+<field index="0">
+<name>dont_care</name>
+<sugaredType>VOID *</sugaredType>
+<desugaredType>VOID *</desugaredType>
+<sizeInBits>64</sizeInBits>
+<offsetInBytes>0</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+</fields>
+</compound>
+<compound mode="struct">
+<isStack>0</isStack>
+<offset>0</offset>
+<typeID>916271de876a5a272eee524e85b9087000</typeID>
+<tagName>type_1</tagName>
+<sizeInBytes>24</sizeInBytes>
+<location file="-" line="0" col="0"/>
+<fields>
+<field index="0">
+<name>dont_care</name>
+<sugaredType>VOID *</sugaredType>
+<desugaredType>VOID *</desugaredType>
+<sizeInBits>64</sizeInBits>
+<offsetInBytes>0</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+</fields>
+</compound>
+</types>

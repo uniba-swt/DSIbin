@@ -1,0 +1,74 @@
+Function = 528
+
+Function = 570
+-0x8: INT64;
+-0x10: VOID*;
+
+Function = 580
+-0x8: INT64;
+-0x10: INT64;
+-0x18: INT64;
+-0x20: INT64;
+-0x28: INT64;
+-0x30: INT64;
+-0x38: VOID*;
+-0x40: INT64;
+-0x48: INT64;
+-0x90: INT64;
+-0x98: INT64;
+-0xa0: INT64;
+-0xa8: VOID*;
+-0xb0: INT32;
+-0xc0: VOID*;
+-0xc8: VOID*;
+-0xcc: INT32;
+-0xd0: INT64;
+
+Function = 5a0
+
+Function = 5c0
+-0x8: VOID*;
+-0x10: INT64;
+
+Function = 5d0
+
+Function = 5e0
+
+Function = 620
+
+Function = 690
+
+Function = 6b0
+
+Function = 6dd
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 776
+
+Function = 8af
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 8e5
+-0x8: VOID*;
+-0x10: VOID*;
+-0x14: INT32;
+-0x18: INT32;
+-0x1c: INT32;
+-0x20: INT32;
+
+Function = 95f
+-0x8: INT64;
+-0xc: INT32;
+
+Function = 9a0
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x20: INT64;
+-0x28: INT64;
+-0x30: INT64;
+
+Function = a14
+

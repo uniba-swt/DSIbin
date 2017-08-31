@@ -1,0 +1,128 @@
+Function = 7a0
+
+Function = 7d0
+-0x10: INT32;
+-0x14: INT32;
+-0xa0: VOID*;
+-0xa8: VOID*;
+-0xb0: VOID*;
+-0xd0: struct{
+         0x0: INT32;
+         0x4: struct{
+                0x0: INT32;
+                0x4: struct{
+                       0x0: VOID*;
+                       0x8: struct{
+                              0x0: VOID*;
+                              0x28: struct{
+                                      0x0: INT64;
+                                      0x8: struct{
+                                             0x0: INT64;
+                                             0x48: struct{
+                                                     0x0: INT64;
+                                                     0x8: struct{
+                                                            0x0: VOID*;
+                                                            0x8: struct{
+                                                                   0x0: VOID*;
+                                                                   0x8: struct{
+                                                                          0x0: VOID*;
+                                                                          0x8: struct{
+                                                                                 0x0: INT64;
+                                                                                 0x8: struct{
+                                                                                        0x0: INT64;
+                                                                                        0x8: struct{
+                                                                                               0x0: INT64;
+                                                                                               0x10: INT64;
+                                                                                             };
+                                                                                      };
+                                                                               };
+                                                                        };
+                                                                 };
+                                                          };
+                                                   };
+                                           };
+                                    };
+                            };
+                     };
+              };
+       };
+
+Function = 7f0
+-0x30: struct{
+         0x0: INT64;
+         0x8: struct{
+                0x0: VOID*;
+                0x8: struct{
+                       0x0: INT64;
+                       0x8: struct{
+                              0x0: VOID*;
+                              0x8: struct{
+                                     0x0: VOID*;
+                                     0x8: INT64;
+                                   };
+                            };
+                     };
+              };
+       };
+
+Function = 810
+-0x10: struct{
+         0x0: VOID*;
+         0x8: INT64;
+       };
+
+Function = 820
+
+Function = 830
+-0x10: struct{
+         0x0: VOID*;
+         0x8: VOID*;
+       };
+
+Function = 840
+
+Function = 860
+-0x10: struct{
+         0x0: VOID*;
+         0x8: VOID*;
+       };
+
+Function = 8a0
+
+Function = 910
+
+Function = 930
+
+Function = 95e
+
+Function = 98c
+
+Function = 9e6
+-0x8: VOID*;
+-0x10: VOID*;
+-0x14: INT32;
+-0x18: VOID*;
+-0x20: VOID*;
+
+Function = a2d
+-0x8: INT64;
+-0x10: INT64;
+-0x20: VOID*;
+
+Function = ae4
+-0x8: INT32;
+-0xc: INT32;
+-0x10: INT32;
+
+Function = b21
+
+Function = b60
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x20: INT64;
+-0x28: INT64;
+-0x30: INT64;
+
+Function = bd4
+

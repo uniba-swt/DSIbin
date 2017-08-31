@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="scala.application">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/DSI-bin/src/main/DsOli.scala"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.preferred_launchers">
+<mapEntry key="[debug]" value="scala.application.new"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="main.DsOli"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--xml:resources/test-programs/five-level-sll-destroyed-top-down/trace.xml&#10; --typexml:resources/test-programs/five-level-sll-destroyed-top-down/types.xml&#10;--xsd:resources/xml/trace-schema.xsd&#10;--featuretracexsd:resources/xml/feature-trace-schema.xsd"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="DSI-bin"/>
+</launchConfiguration>

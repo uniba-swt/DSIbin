@@ -1,0 +1,80 @@
+<types arch="64">
+<compound mode="struct">
+<isStack>0</isStack>
+<offset>0</offset>
+<typeID>596f3376b1ce70a1488ef67a4478bd1c00</typeID>
+<tagName>type_0</tagName>
+<sizeInBytes>16</sizeInBytes>
+<location file="-" line="0" col="0"/>
+<fields>
+<field index="0">
+<name>dont_care</name>
+<sugaredType>INT32</sugaredType>
+<desugaredType>INT32</desugaredType>
+<sizeInBits>32</sizeInBits>
+<offsetInBytes>0</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+<field index="1">
+<name>dont_care</name>
+<sugaredType>VOID *</sugaredType>
+<desugaredType>VOID *</desugaredType>
+<sizeInBits>64</sizeInBits>
+<offsetInBytes>8</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+</fields>
+</compound>
+<compound mode="struct">
+<isStack>0</isStack>
+<offset>0</offset>
+<typeID>d065d5b218b5fe326358a1a4d48201900</typeID>
+<tagName>type_1</tagName>
+<sizeInBytes>24</sizeInBytes>
+<location file="-" line="0" col="0"/>
+<fields>
+<field index="0">
+<name>dont_care</name>
+<sugaredType>INT32</sugaredType>
+<desugaredType>INT32</desugaredType>
+<sizeInBits>32</sizeInBits>
+<offsetInBytes>0</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+<field index="1">
+<name>dont_care</name>
+<sugaredType>struct type_2</sugaredType>
+<desugaredType>struct type_2</desugaredType>
+<sizeInBits>128</sizeInBits>
+<offsetInBytes>8</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+</fields>
+</compound>
+<compound mode="struct">
+<isStack>0</isStack>
+<offset>8</offset>
+<typeID>d065d5b218b5fe326358a1a4d48201900</typeID>
+<tagName>type_2</tagName>
+<sizeInBytes>16</sizeInBytes>
+<location file="-" line="0" col="0"/>
+<fields>
+<field index="0">
+<name>dont_care</name>
+<sugaredType>INT32</sugaredType>
+<desugaredType>INT32</desugaredType>
+<sizeInBits>32</sizeInBits>
+<offsetInBytes>0</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+<field index="1">
+<name>dont_care</name>
+<sugaredType>VOID *</sugaredType>
+<desugaredType>VOID *</desugaredType>
+<sizeInBits>64</sizeInBits>
+<offsetInBytes>8</offsetInBytes>
+<location file="-" line="0" col="0"/>
+</field>
+</fields>
+</compound>
+</types>

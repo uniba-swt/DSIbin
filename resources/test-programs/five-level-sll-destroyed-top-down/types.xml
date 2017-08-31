@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<types arch="64">
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>d8809fb48214f0526ad0cd2d5d2e4cc000</typeID>
+    <tagName>type_0</tagName>
+    <sizeInBytes>16</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>f41cc3e67586695db0ba67fa3086d22e00</typeID>
+    <tagName>type_1</tagName>
+    <sizeInBytes>16</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>aec30a189d97c774ba72508b5c03e25900</typeID>
+    <tagName>type_2</tagName>
+    <sizeInBytes>16</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>2286ce46ea3bb97bef9bd47b2194ce2c00</typeID>
+    <tagName>type_3</tagName>
+    <sizeInBytes>16</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>a042eaeef12b4753b5dd355b82878f0500</typeID>
+    <tagName>type_4</tagName>
+    <sizeInBytes>16</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>8</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>7c5116246e527bb12ecf0ddd5980f7a700</typeID>
+    <tagName>type_5</tagName>
+    <sizeInBytes>119</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>X</sugaredType>
+        <desugaredType>X</desugaredType>
+        <sizeInBits>0</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+</types>

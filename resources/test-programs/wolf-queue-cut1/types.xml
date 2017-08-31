@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<types arch="64">
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>356f55182fc0516d36616384bedb986500</typeID>
+    <tagName>type_0</tagName>
+    <sizeInBytes>56</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>INT8</sugaredType>
+        <desugaredType>INT8</desugaredType>
+        <sizeInBits>8</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>INT32</sugaredType>
+        <desugaredType>INT32</desugaredType>
+        <sizeInBits>32</sizeInBits>
+        <offsetInBytes>40</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="2">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>48</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+  <compound mode="struct">
+    <isStack>0</isStack>
+    <offset>0</offset>
+    <typeID>d1e35fd9ff15b02e1ade7623299b75f00</typeID>
+    <tagName>type_1</tagName>
+    <sizeInBytes>56</sizeInBytes>
+    <location file="-" line="0" col="0"/>
+    <fields>
+      <field index="0">
+        <name>dont_care</name>
+        <sugaredType>INT32</sugaredType>
+        <desugaredType>INT32</desugaredType>
+        <sizeInBits>32</sizeInBits>
+        <offsetInBytes>0</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="1">
+        <name>dont_care</name>
+        <sugaredType>INT16</sugaredType>
+        <desugaredType>INT16</desugaredType>
+        <sizeInBits>16</sizeInBits>
+        <offsetInBytes>4</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="2">
+        <name>dont_care</name>
+        <sugaredType>INT32</sugaredType>
+        <desugaredType>INT32</desugaredType>
+        <sizeInBits>32</sizeInBits>
+        <offsetInBytes>20</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="3">
+        <name>dont_care</name>
+        <sugaredType>INT16</sugaredType>
+        <desugaredType>INT16</desugaredType>
+        <sizeInBits>16</sizeInBits>
+        <offsetInBytes>24</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="4">
+        <name>dont_care</name>
+        <sugaredType>INT32</sugaredType>
+        <desugaredType>INT32</desugaredType>
+        <sizeInBits>32</sizeInBits>
+        <offsetInBytes>40</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+      <field index="5">
+        <name>dont_care</name>
+        <sugaredType>VOID *</sugaredType>
+        <desugaredType>VOID *</desugaredType>
+        <sizeInBits>64</sizeInBits>
+        <offsetInBytes>48</offsetInBytes>
+        <location file="-" line="0" col="0"/>
+      </field>
+    </fields>
+  </compound>
+</types>

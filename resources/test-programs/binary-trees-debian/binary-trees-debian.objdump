@@ -1,0 +1,606 @@
+
+binary-trees-debian/binary-trees-debian:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400580 <_init>:
+  400580:	48 83 ec 08          	sub    $0x8,%rsp
+  400584:	48 8b 05 6d 0a 20 00 	mov    0x200a6d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1e0>
+  40058b:	48 85 c0             	test   %rax,%rax
+  40058e:	74 05                	je     400595 <_init+0x15>
+  400590:	e8 5b 00 00 00       	callq  4005f0 <__gmon_start__@plt>
+  400595:	48 83 c4 08          	add    $0x8,%rsp
+  400599:	c3                   	retq   
+
+Disassembly of section .plt:
+
+00000000004005a0 <free@plt-0x10>:
+  4005a0:	ff 35 62 0a 20 00    	pushq  0x200a62(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4005a6:	ff 25 64 0a 20 00    	jmpq   *0x200a64(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  4005ac:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004005b0 <free@plt>:
+  4005b0:	ff 25 62 0a 20 00    	jmpq   *0x200a62(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  4005b6:	68 00 00 00 00       	pushq  $0x0
+  4005bb:	e9 e0 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+00000000004005c0 <printf@plt>:
+  4005c0:	ff 25 5a 0a 20 00    	jmpq   *0x200a5a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  4005c6:	68 01 00 00 00       	pushq  $0x1
+  4005cb:	e9 d0 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+00000000004005d0 <pow@plt>:
+  4005d0:	ff 25 52 0a 20 00    	jmpq   *0x200a52(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  4005d6:	68 02 00 00 00       	pushq  $0x2
+  4005db:	e9 c0 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+00000000004005e0 <__libc_start_main@plt>:
+  4005e0:	ff 25 4a 0a 20 00    	jmpq   *0x200a4a(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  4005e6:	68 03 00 00 00       	pushq  $0x3
+  4005eb:	e9 b0 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+00000000004005f0 <__gmon_start__@plt>:
+  4005f0:	ff 25 42 0a 20 00    	jmpq   *0x200a42(%rip)        # 601038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  4005f6:	68 04 00 00 00       	pushq  $0x4
+  4005fb:	e9 a0 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+0000000000400600 <malloc@plt>:
+  400600:	ff 25 3a 0a 20 00    	jmpq   *0x200a3a(%rip)        # 601040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400606:	68 05 00 00 00       	pushq  $0x5
+  40060b:	e9 90 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+0000000000400610 <atol@plt>:
+  400610:	ff 25 32 0a 20 00    	jmpq   *0x200a32(%rip)        # 601048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400616:	68 06 00 00 00       	pushq  $0x6
+  40061b:	e9 80 ff ff ff       	jmpq   4005a0 <_init+0x20>
+
+Disassembly of section .text:
+
+0000000000400620 <_start>:
+  400620:	31 ed                	xor    %ebp,%ebp
+  400622:	49 89 d1             	mov    %rdx,%r9
+  400625:	5e                   	pop    %rsi
+  400626:	48 89 e2             	mov    %rsp,%rdx
+  400629:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40062d:	50                   	push   %rax
+  40062e:	54                   	push   %rsp
+  40062f:	49 c7 c0 10 0b 40 00 	mov    $0x400b10,%r8
+  400636:	48 c7 c1 a0 0a 40 00 	mov    $0x400aa0,%rcx
+  40063d:	48 c7 c7 89 08 40 00 	mov    $0x400889,%rdi
+  400644:	e8 97 ff ff ff       	callq  4005e0 <__libc_start_main@plt>
+  400649:	f4                   	hlt    
+  40064a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400650 <deregister_tm_clones>:
+  400650:	b8 67 10 60 00       	mov    $0x601067,%eax
+  400655:	55                   	push   %rbp
+  400656:	48 2d 60 10 60 00    	sub    $0x601060,%rax
+  40065c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400660:	48 89 e5             	mov    %rsp,%rbp
+  400663:	77 02                	ja     400667 <deregister_tm_clones+0x17>
+  400665:	5d                   	pop    %rbp
+  400666:	c3                   	retq   
+  400667:	b8 00 00 00 00       	mov    $0x0,%eax
+  40066c:	48 85 c0             	test   %rax,%rax
+  40066f:	74 f4                	je     400665 <deregister_tm_clones+0x15>
+  400671:	5d                   	pop    %rbp
+  400672:	bf 60 10 60 00       	mov    $0x601060,%edi
+  400677:	ff e0                	jmpq   *%rax
+  400679:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400680 <register_tm_clones>:
+  400680:	b8 60 10 60 00       	mov    $0x601060,%eax
+  400685:	55                   	push   %rbp
+  400686:	48 2d 60 10 60 00    	sub    $0x601060,%rax
+  40068c:	48 c1 f8 03          	sar    $0x3,%rax
+  400690:	48 89 e5             	mov    %rsp,%rbp
+  400693:	48 89 c2             	mov    %rax,%rdx
+  400696:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  40069a:	48 01 d0             	add    %rdx,%rax
+  40069d:	48 d1 f8             	sar    %rax
+  4006a0:	75 02                	jne    4006a4 <register_tm_clones+0x24>
+  4006a2:	5d                   	pop    %rbp
+  4006a3:	c3                   	retq   
+  4006a4:	ba 00 00 00 00       	mov    $0x0,%edx
+  4006a9:	48 85 d2             	test   %rdx,%rdx
+  4006ac:	74 f4                	je     4006a2 <register_tm_clones+0x22>
+  4006ae:	5d                   	pop    %rbp
+  4006af:	48 89 c6             	mov    %rax,%rsi
+  4006b2:	bf 60 10 60 00       	mov    $0x601060,%edi
+  4006b7:	ff e2                	jmpq   *%rdx
+  4006b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000004006c0 <__do_global_dtors_aux>:
+  4006c0:	80 3d 99 09 20 00 00 	cmpb   $0x0,0x200999(%rip)        # 601060 <__TMC_END__>
+  4006c7:	75 11                	jne    4006da <__do_global_dtors_aux+0x1a>
+  4006c9:	55                   	push   %rbp
+  4006ca:	48 89 e5             	mov    %rsp,%rbp
+  4006cd:	e8 7e ff ff ff       	callq  400650 <deregister_tm_clones>
+  4006d2:	5d                   	pop    %rbp
+  4006d3:	c6 05 86 09 20 00 01 	movb   $0x1,0x200986(%rip)        # 601060 <__TMC_END__>
+  4006da:	f3 c3                	repz retq 
+  4006dc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000004006e0 <frame_dummy>:
+  4006e0:	48 83 3d 28 07 20 00 	cmpq   $0x0,0x200728(%rip)        # 600e10 <__JCR_END__>
+  4006e7:	00 
+  4006e8:	74 1e                	je     400708 <frame_dummy+0x28>
+  4006ea:	b8 00 00 00 00       	mov    $0x0,%eax
+  4006ef:	48 85 c0             	test   %rax,%rax
+  4006f2:	74 14                	je     400708 <frame_dummy+0x28>
+  4006f4:	55                   	push   %rbp
+  4006f5:	bf 10 0e 60 00       	mov    $0x600e10,%edi
+  4006fa:	48 89 e5             	mov    %rsp,%rbp
+  4006fd:	ff d0                	callq  *%rax
+  4006ff:	5d                   	pop    %rbp
+  400700:	e9 7b ff ff ff       	jmpq   400680 <register_tm_clones>
+  400705:	0f 1f 00             	nopl   (%rax)
+  400708:	e9 73 ff ff ff       	jmpq   400680 <register_tm_clones>
+
+000000000040070d <NewTreeNode>:
+    long          item;
+} treeNode;
+
+
+treeNode* NewTreeNode(treeNode* left, treeNode* right, long item)
+{
+  40070d:	55                   	push   %rbp
+  40070e:	48 89 e5             	mov    %rsp,%rbp
+  400711:	48 83 ec 30          	sub    $0x30,%rsp
+  400715:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  400719:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  40071d:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+    treeNode*    new;
+
+    new = (treeNode*)malloc(sizeof(treeNode));
+  400721:	bf 18 00 00 00       	mov    $0x18,%edi
+  400726:	e8 d5 fe ff ff       	callq  400600 <malloc@plt>
+  40072b:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+
+    new->left = left;
+  40072f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400733:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  400737:	48 89 10             	mov    %rdx,(%rax)
+    new->right = right;
+  40073a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40073e:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  400742:	48 89 50 08          	mov    %rdx,0x8(%rax)
+    new->item = item;
+  400746:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40074a:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  40074e:	48 89 50 10          	mov    %rdx,0x10(%rax)
+
+    return new;
+  400752:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+} /* NewTreeNode() */
+  400756:	c9                   	leaveq 
+  400757:	c3                   	retq   
+
+0000000000400758 <ItemCheck>:
+
+
+long ItemCheck(treeNode* tree)
+{
+  400758:	55                   	push   %rbp
+  400759:	48 89 e5             	mov    %rsp,%rbp
+  40075c:	53                   	push   %rbx
+  40075d:	48 83 ec 18          	sub    $0x18,%rsp
+  400761:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+    if (tree->left == NULL)
+  400765:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400769:	48 8b 00             	mov    (%rax),%rax
+  40076c:	48 85 c0             	test   %rax,%rax
+  40076f:	75 0a                	jne    40077b <ItemCheck+0x23>
+        return tree->item;
+  400771:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400775:	48 8b 40 10          	mov    0x10(%rax),%rax
+  400779:	eb 30                	jmp    4007ab <ItemCheck+0x53>
+    else
+        return tree->item + ItemCheck(tree->left) - ItemCheck(tree->right);
+  40077b:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40077f:	48 8b 58 10          	mov    0x10(%rax),%rbx
+  400783:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400787:	48 8b 00             	mov    (%rax),%rax
+  40078a:	48 89 c7             	mov    %rax,%rdi
+  40078d:	e8 c6 ff ff ff       	callq  400758 <ItemCheck>
+  400792:	48 01 c3             	add    %rax,%rbx
+  400795:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400799:	48 8b 40 08          	mov    0x8(%rax),%rax
+  40079d:	48 89 c7             	mov    %rax,%rdi
+  4007a0:	e8 b3 ff ff ff       	callq  400758 <ItemCheck>
+  4007a5:	48 29 c3             	sub    %rax,%rbx
+  4007a8:	48 89 d8             	mov    %rbx,%rax
+} /* ItemCheck() */
+  4007ab:	48 83 c4 18          	add    $0x18,%rsp
+  4007af:	5b                   	pop    %rbx
+  4007b0:	5d                   	pop    %rbp
+  4007b1:	c3                   	retq   
+
+00000000004007b2 <BottomUpTree>:
+
+
+treeNode* BottomUpTree(long item, unsigned depth)
+{
+  4007b2:	55                   	push   %rbp
+  4007b3:	48 89 e5             	mov    %rsp,%rbp
+  4007b6:	53                   	push   %rbx
+  4007b7:	48 83 ec 18          	sub    $0x18,%rsp
+  4007bb:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  4007bf:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+	printf("BottomUpTree: item %d depth: %d\n", item, depth);
+  4007c2:	8b 55 e4             	mov    -0x1c(%rbp),%edx
+  4007c5:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4007c9:	48 89 c6             	mov    %rax,%rsi
+  4007cc:	bf 28 0b 40 00       	mov    $0x400b28,%edi
+  4007d1:	b8 00 00 00 00       	mov    $0x0,%eax
+  4007d6:	e8 e5 fd ff ff       	callq  4005c0 <printf@plt>
+    if (depth > 0)
+  4007db:	83 7d e4 00          	cmpl   $0x0,-0x1c(%rbp)
+  4007df:	74 46                	je     400827 <BottomUpTree+0x75>
+        return NewTreeNode
+        (
+  4007e1:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  4007e4:	8d 50 ff             	lea    -0x1(%rax),%edx
+  4007e7:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4007eb:	48 01 c0             	add    %rax,%rax
+  4007ee:	89 d6                	mov    %edx,%esi
+  4007f0:	48 89 c7             	mov    %rax,%rdi
+  4007f3:	e8 ba ff ff ff       	callq  4007b2 <BottomUpTree>
+  4007f8:	48 89 c3             	mov    %rax,%rbx
+  4007fb:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  4007fe:	8d 50 ff             	lea    -0x1(%rax),%edx
+            BottomUpTree(2 * item - 1, depth - 1),
+  400801:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400805:	48 01 c0             	add    %rax,%rax
+treeNode* BottomUpTree(long item, unsigned depth)
+{
+	printf("BottomUpTree: item %d depth: %d\n", item, depth);
+    if (depth > 0)
+        return NewTreeNode
+        (
+  400808:	48 83 e8 01          	sub    $0x1,%rax
+  40080c:	89 d6                	mov    %edx,%esi
+  40080e:	48 89 c7             	mov    %rax,%rdi
+  400811:	e8 9c ff ff ff       	callq  4007b2 <BottomUpTree>
+
+treeNode* BottomUpTree(long item, unsigned depth)
+{
+	printf("BottomUpTree: item %d depth: %d\n", item, depth);
+    if (depth > 0)
+        return NewTreeNode
+  400816:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  40081a:	48 89 de             	mov    %rbx,%rsi
+  40081d:	48 89 c7             	mov    %rax,%rdi
+  400820:	e8 e8 fe ff ff       	callq  40070d <NewTreeNode>
+  400825:	eb 16                	jmp    40083d <BottomUpTree+0x8b>
+            BottomUpTree(2 * item - 1, depth - 1),
+            BottomUpTree(2 * item, depth - 1),
+            item
+        );
+    else
+        return NewTreeNode(NULL, NULL, item);
+  400827:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40082b:	48 89 c2             	mov    %rax,%rdx
+  40082e:	be 00 00 00 00       	mov    $0x0,%esi
+  400833:	bf 00 00 00 00       	mov    $0x0,%edi
+  400838:	e8 d0 fe ff ff       	callq  40070d <NewTreeNode>
+} /* BottomUpTree() */
+  40083d:	48 83 c4 18          	add    $0x18,%rsp
+  400841:	5b                   	pop    %rbx
+  400842:	5d                   	pop    %rbp
+  400843:	c3                   	retq   
+
+0000000000400844 <DeleteTree>:
+
+
+void DeleteTree(treeNode* tree)
+{
+  400844:	55                   	push   %rbp
+  400845:	48 89 e5             	mov    %rsp,%rbp
+  400848:	48 83 ec 10          	sub    $0x10,%rsp
+  40084c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    if (tree->left != NULL)
+  400850:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400854:	48 8b 00             	mov    (%rax),%rax
+  400857:	48 85 c0             	test   %rax,%rax
+  40085a:	74 1f                	je     40087b <DeleteTree+0x37>
+    {
+        DeleteTree(tree->left);
+  40085c:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400860:	48 8b 00             	mov    (%rax),%rax
+  400863:	48 89 c7             	mov    %rax,%rdi
+  400866:	e8 d9 ff ff ff       	callq  400844 <DeleteTree>
+        DeleteTree(tree->right);
+  40086b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40086f:	48 8b 40 08          	mov    0x8(%rax),%rax
+  400873:	48 89 c7             	mov    %rax,%rdi
+  400876:	e8 c9 ff ff ff       	callq  400844 <DeleteTree>
+    }
+
+    free(tree);
+  40087b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40087f:	48 89 c7             	mov    %rax,%rdi
+  400882:	e8 29 fd ff ff       	callq  4005b0 <free@plt>
+} /* DeleteTree() */
+  400887:	c9                   	leaveq 
+  400888:	c3                   	retq   
+
+0000000000400889 <main>:
+
+
+int main(int argc, char* argv[])
+{
+  400889:	55                   	push   %rbp
+  40088a:	48 89 e5             	mov    %rsp,%rbp
+  40088d:	48 83 ec 70          	sub    $0x70,%rsp
+  400891:	89 7d ac             	mov    %edi,-0x54(%rbp)
+  400894:	48 89 75 a0          	mov    %rsi,-0x60(%rbp)
+    unsigned   N, depth, minDepth, maxDepth, stretchDepth;
+    treeNode   *stretchTree, *longLivedTree, *tempTree;
+
+    N = atol(argv[1]);
+  400898:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+  40089c:	48 83 c0 08          	add    $0x8,%rax
+  4008a0:	48 8b 00             	mov    (%rax),%rax
+  4008a3:	48 89 c7             	mov    %rax,%rdi
+  4008a6:	e8 65 fd ff ff       	callq  400610 <atol@plt>
+  4008ab:	89 45 c4             	mov    %eax,-0x3c(%rbp)
+
+    minDepth = 0;
+  4008ae:	c7 45 c8 00 00 00 00 	movl   $0x0,-0x38(%rbp)
+
+    if ((minDepth + 2) > N)
+  4008b5:	8b 45 c8             	mov    -0x38(%rbp),%eax
+  4008b8:	83 c0 02             	add    $0x2,%eax
+  4008bb:	3b 45 c4             	cmp    -0x3c(%rbp),%eax
+  4008be:	76 0b                	jbe    4008cb <main+0x42>
+        maxDepth = minDepth + 2;
+  4008c0:	8b 45 c8             	mov    -0x38(%rbp),%eax
+  4008c3:	83 c0 02             	add    $0x2,%eax
+  4008c6:	89 45 c0             	mov    %eax,-0x40(%rbp)
+  4008c9:	eb 06                	jmp    4008d1 <main+0x48>
+    else
+        maxDepth = N;
+  4008cb:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+  4008ce:	89 45 c0             	mov    %eax,-0x40(%rbp)
+
+
+    stretchDepth = maxDepth + 1;
+  4008d1:	8b 45 c0             	mov    -0x40(%rbp),%eax
+  4008d4:	83 c0 01             	add    $0x1,%eax
+  4008d7:	89 45 cc             	mov    %eax,-0x34(%rbp)
+    printf("maxDepth: %d minDepth: %d N: %d stretchDepth: %d\n", maxDepth, minDepth, N, stretchDepth);
+  4008da:	8b 75 cc             	mov    -0x34(%rbp),%esi
+  4008dd:	8b 4d c4             	mov    -0x3c(%rbp),%ecx
+  4008e0:	8b 55 c8             	mov    -0x38(%rbp),%edx
+  4008e3:	8b 45 c0             	mov    -0x40(%rbp),%eax
+  4008e6:	41 89 f0             	mov    %esi,%r8d
+  4008e9:	89 c6                	mov    %eax,%esi
+  4008eb:	bf 50 0b 40 00       	mov    $0x400b50,%edi
+  4008f0:	b8 00 00 00 00       	mov    $0x0,%eax
+  4008f5:	e8 c6 fc ff ff       	callq  4005c0 <printf@plt>
+
+    stretchTree = BottomUpTree(0, stretchDepth);
+  4008fa:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  4008fd:	89 c6                	mov    %eax,%esi
+  4008ff:	bf 00 00 00 00       	mov    $0x0,%edi
+  400904:	e8 a9 fe ff ff       	callq  4007b2 <BottomUpTree>
+  400909:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+    printf
+    (
+  40090d:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400911:	48 89 c7             	mov    %rax,%rdi
+  400914:	e8 3f fe ff ff       	callq  400758 <ItemCheck>
+  400919:	48 89 c2             	mov    %rax,%rdx
+  40091c:	8b 45 cc             	mov    -0x34(%rbp),%eax
+  40091f:	89 c6                	mov    %eax,%esi
+  400921:	bf 88 0b 40 00       	mov    $0x400b88,%edi
+  400926:	b8 00 00 00 00       	mov    $0x0,%eax
+  40092b:	e8 90 fc ff ff       	callq  4005c0 <printf@plt>
+        "stretch tree of depth %u\t check: %li\n",
+        stretchDepth,
+        ItemCheck(stretchTree)
+    );
+
+    DeleteTree(stretchTree);
+  400930:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400934:	48 89 c7             	mov    %rax,%rdi
+  400937:	e8 08 ff ff ff       	callq  400844 <DeleteTree>
+
+    longLivedTree = BottomUpTree(0, maxDepth);
+  40093c:	8b 45 c0             	mov    -0x40(%rbp),%eax
+  40093f:	89 c6                	mov    %eax,%esi
+  400941:	bf 00 00 00 00       	mov    $0x0,%edi
+  400946:	e8 67 fe ff ff       	callq  4007b2 <BottomUpTree>
+  40094b:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+
+    for (depth = minDepth; depth <= maxDepth; depth += 2)
+  40094f:	8b 45 c8             	mov    -0x38(%rbp),%eax
+  400952:	89 45 bc             	mov    %eax,-0x44(%rbp)
+  400955:	e9 05 01 00 00       	jmpq   400a5f <main+0x1d6>
+    {
+        long    i, iterations, check;
+
+        iterations = pow(2, maxDepth - depth + minDepth);
+  40095a:	8b 45 bc             	mov    -0x44(%rbp),%eax
+  40095d:	8b 55 c0             	mov    -0x40(%rbp),%edx
+  400960:	29 c2                	sub    %eax,%edx
+  400962:	8b 45 c8             	mov    -0x38(%rbp),%eax
+  400965:	01 d0                	add    %edx,%eax
+  400967:	89 c0                	mov    %eax,%eax
+  400969:	48 85 c0             	test   %rax,%rax
+  40096c:	78 07                	js     400975 <main+0xec>
+  40096e:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+  400973:	eb 15                	jmp    40098a <main+0x101>
+  400975:	48 89 c2             	mov    %rax,%rdx
+  400978:	48 d1 ea             	shr    %rdx
+  40097b:	83 e0 01             	and    $0x1,%eax
+  40097e:	48 09 c2             	or     %rax,%rdx
+  400981:	f2 48 0f 2a c2       	cvtsi2sd %rdx,%xmm0
+  400986:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+  40098a:	48 b8 00 00 00 00 00 	movabs $0x4000000000000000,%rax
+  400991:	00 00 40 
+  400994:	66 0f 28 c8          	movapd %xmm0,%xmm1
+  400998:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+  40099c:	f2 0f 10 45 98       	movsd  -0x68(%rbp),%xmm0
+  4009a1:	e8 2a fc ff ff       	callq  4005d0 <pow@plt>
+  4009a6:	f2 48 0f 2c c0       	cvttsd2si %xmm0,%rax
+  4009ab:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+
+        check = 0;
+  4009af:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+  4009b6:	00 
+
+        for (i = 1; i <= iterations; i++)
+  4009b7:	48 c7 45 d0 01 00 00 	movq   $0x1,-0x30(%rbp)
+  4009be:	00 
+  4009bf:	eb 6d                	jmp    400a2e <main+0x1a5>
+        {
+            tempTree = BottomUpTree(i, depth);
+  4009c1:	8b 55 bc             	mov    -0x44(%rbp),%edx
+  4009c4:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  4009c8:	89 d6                	mov    %edx,%esi
+  4009ca:	48 89 c7             	mov    %rax,%rdi
+  4009cd:	e8 e0 fd ff ff       	callq  4007b2 <BottomUpTree>
+  4009d2:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+            check += ItemCheck(tempTree);
+  4009d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4009da:	48 89 c7             	mov    %rax,%rdi
+  4009dd:	e8 76 fd ff ff       	callq  400758 <ItemCheck>
+  4009e2:	48 01 45 d8          	add    %rax,-0x28(%rbp)
+            DeleteTree(tempTree);
+  4009e6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4009ea:	48 89 c7             	mov    %rax,%rdi
+  4009ed:	e8 52 fe ff ff       	callq  400844 <DeleteTree>
+
+            tempTree = BottomUpTree(-i, depth);
+  4009f2:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  4009f6:	48 f7 d8             	neg    %rax
+  4009f9:	48 89 c2             	mov    %rax,%rdx
+  4009fc:	8b 45 bc             	mov    -0x44(%rbp),%eax
+  4009ff:	89 c6                	mov    %eax,%esi
+  400a01:	48 89 d7             	mov    %rdx,%rdi
+  400a04:	e8 a9 fd ff ff       	callq  4007b2 <BottomUpTree>
+  400a09:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+            check += ItemCheck(tempTree);
+  400a0d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400a11:	48 89 c7             	mov    %rax,%rdi
+  400a14:	e8 3f fd ff ff       	callq  400758 <ItemCheck>
+  400a19:	48 01 45 d8          	add    %rax,-0x28(%rbp)
+            DeleteTree(tempTree);
+  400a1d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400a21:	48 89 c7             	mov    %rax,%rdi
+  400a24:	e8 1b fe ff ff       	callq  400844 <DeleteTree>
+
+        iterations = pow(2, maxDepth - depth + minDepth);
+
+        check = 0;
+
+        for (i = 1; i <= iterations; i++)
+  400a29:	48 83 45 d0 01       	addq   $0x1,-0x30(%rbp)
+  400a2e:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  400a32:	48 3b 45 f0          	cmp    -0x10(%rbp),%rax
+  400a36:	7e 89                	jle    4009c1 <main+0x138>
+            check += ItemCheck(tempTree);
+            DeleteTree(tempTree);
+        } /* for(i = 1...) */
+
+        printf
+        (
+  400a38:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400a3c:	48 8d 34 00          	lea    (%rax,%rax,1),%rsi
+  400a40:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  400a44:	8b 45 bc             	mov    -0x44(%rbp),%eax
+  400a47:	48 89 d1             	mov    %rdx,%rcx
+  400a4a:	89 c2                	mov    %eax,%edx
+  400a4c:	bf b0 0b 40 00       	mov    $0x400bb0,%edi
+  400a51:	b8 00 00 00 00       	mov    $0x0,%eax
+  400a56:	e8 65 fb ff ff       	callq  4005c0 <printf@plt>
+
+    DeleteTree(stretchTree);
+
+    longLivedTree = BottomUpTree(0, maxDepth);
+
+    for (depth = minDepth; depth <= maxDepth; depth += 2)
+  400a5b:	83 45 bc 02          	addl   $0x2,-0x44(%rbp)
+  400a5f:	8b 45 bc             	mov    -0x44(%rbp),%eax
+  400a62:	3b 45 c0             	cmp    -0x40(%rbp),%eax
+  400a65:	0f 86 ef fe ff ff    	jbe    40095a <main+0xd1>
+            check
+        );
+    } /* for(depth = minDepth...) */
+
+    printf
+    (
+  400a6b:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400a6f:	48 89 c7             	mov    %rax,%rdi
+  400a72:	e8 e1 fc ff ff       	callq  400758 <ItemCheck>
+  400a77:	48 89 c2             	mov    %rax,%rdx
+  400a7a:	8b 45 c0             	mov    -0x40(%rbp),%eax
+  400a7d:	89 c6                	mov    %eax,%esi
+  400a7f:	bf d8 0b 40 00       	mov    $0x400bd8,%edi
+  400a84:	b8 00 00 00 00       	mov    $0x0,%eax
+  400a89:	e8 32 fb ff ff       	callq  4005c0 <printf@plt>
+        "long lived tree of depth %u\t check: %li\n",
+        maxDepth,
+        ItemCheck(longLivedTree)
+    );
+
+    return 0;
+  400a8e:	b8 00 00 00 00       	mov    $0x0,%eax
+} /* main() */
+  400a93:	c9                   	leaveq 
+  400a94:	c3                   	retq   
+  400a95:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  400a9c:	00 00 00 
+  400a9f:	90                   	nop
+
+0000000000400aa0 <__libc_csu_init>:
+  400aa0:	41 57                	push   %r15
+  400aa2:	41 89 ff             	mov    %edi,%r15d
+  400aa5:	41 56                	push   %r14
+  400aa7:	49 89 f6             	mov    %rsi,%r14
+  400aaa:	41 55                	push   %r13
+  400aac:	49 89 d5             	mov    %rdx,%r13
+  400aaf:	41 54                	push   %r12
+  400ab1:	4c 8d 25 48 03 20 00 	lea    0x200348(%rip),%r12        # 600e00 <__frame_dummy_init_array_entry>
+  400ab8:	55                   	push   %rbp
+  400ab9:	48 8d 2d 48 03 20 00 	lea    0x200348(%rip),%rbp        # 600e08 <__init_array_end>
+  400ac0:	53                   	push   %rbx
+  400ac1:	4c 29 e5             	sub    %r12,%rbp
+  400ac4:	31 db                	xor    %ebx,%ebx
+  400ac6:	48 c1 fd 03          	sar    $0x3,%rbp
+  400aca:	48 83 ec 08          	sub    $0x8,%rsp
+  400ace:	e8 ad fa ff ff       	callq  400580 <_init>
+  400ad3:	48 85 ed             	test   %rbp,%rbp
+  400ad6:	74 1e                	je     400af6 <__libc_csu_init+0x56>
+  400ad8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  400adf:	00 
+  400ae0:	4c 89 ea             	mov    %r13,%rdx
+  400ae3:	4c 89 f6             	mov    %r14,%rsi
+  400ae6:	44 89 ff             	mov    %r15d,%edi
+  400ae9:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  400aed:	48 83 c3 01          	add    $0x1,%rbx
+  400af1:	48 39 eb             	cmp    %rbp,%rbx
+  400af4:	75 ea                	jne    400ae0 <__libc_csu_init+0x40>
+  400af6:	48 83 c4 08          	add    $0x8,%rsp
+  400afa:	5b                   	pop    %rbx
+  400afb:	5d                   	pop    %rbp
+  400afc:	41 5c                	pop    %r12
+  400afe:	41 5d                	pop    %r13
+  400b00:	41 5e                	pop    %r14
+  400b02:	41 5f                	pop    %r15
+  400b04:	c3                   	retq   
+  400b05:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  400b0c:	00 00 00 00 
+
+0000000000400b10 <__libc_csu_fini>:
+  400b10:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000400b14 <_fini>:
+  400b14:	48 83 ec 08          	sub    $0x8,%rsp
+  400b18:	48 83 c4 08          	add    $0x8,%rsp
+  400b1c:	c3                   	retq   

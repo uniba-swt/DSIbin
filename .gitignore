@@ -1,0 +1,35 @@
+*.class
+*.log
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+log/
+
+# Vim
+.*.s??
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+.bin/
+
+# Cil
+_build/
+
+# Office
+*.ods#
+
+# General
+tmp
+
+# To be continued...
+/bin

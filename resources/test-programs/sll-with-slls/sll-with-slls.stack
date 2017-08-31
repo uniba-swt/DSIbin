@@ -1,0 +1,18 @@
+Function = 5bd
+-0xc: INT32;
+-0x20: INT64;
+-0x24: INT32;
+
+Function = 62b
+-0xc: INT32;
+-0x20: INT64;
+-0x24: INT32;
+
+Function = 69e
+-0x10: VOID*;
+-0x18: VOID*;
+-0x1c: INT32;
+-0x20: INT32;
+-0x24: INT32;
+-0x2c: INT32;
+-0x38: INT64;

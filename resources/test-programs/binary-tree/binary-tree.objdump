@@ -1,0 +1,380 @@
+
+binary-tree/binary-tree:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400418 <_init>:
+  400418:	48 83 ec 08          	sub    $0x8,%rsp
+  40041c:	48 8b 05 d5 0b 20 00 	mov    0x200bd5(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  400423:	48 85 c0             	test   %rax,%rax
+  400426:	74 05                	je     40042d <_init+0x15>
+  400428:	e8 43 00 00 00       	callq  400470 <__gmon_start__@plt>
+  40042d:	48 83 c4 08          	add    $0x8,%rsp
+  400431:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400440 <printf@plt-0x10>:
+  400440:	ff 35 c2 0b 20 00    	pushq  0x200bc2(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400446:	ff 25 c4 0b 20 00    	jmpq   *0x200bc4(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40044c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400450 <printf@plt>:
+  400450:	ff 25 c2 0b 20 00    	jmpq   *0x200bc2(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400456:	68 00 00 00 00       	pushq  $0x0
+  40045b:	e9 e0 ff ff ff       	jmpq   400440 <_init+0x28>
+
+0000000000400460 <__libc_start_main@plt>:
+  400460:	ff 25 ba 0b 20 00    	jmpq   *0x200bba(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400466:	68 01 00 00 00       	pushq  $0x1
+  40046b:	e9 d0 ff ff ff       	jmpq   400440 <_init+0x28>
+
+0000000000400470 <__gmon_start__@plt>:
+  400470:	ff 25 b2 0b 20 00    	jmpq   *0x200bb2(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400476:	68 02 00 00 00       	pushq  $0x2
+  40047b:	e9 c0 ff ff ff       	jmpq   400440 <_init+0x28>
+
+0000000000400480 <malloc@plt>:
+  400480:	ff 25 aa 0b 20 00    	jmpq   *0x200baa(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400486:	68 03 00 00 00       	pushq  $0x3
+  40048b:	e9 b0 ff ff ff       	jmpq   400440 <_init+0x28>
+
+Disassembly of section .text:
+
+0000000000400490 <_start>:
+  400490:	31 ed                	xor    %ebp,%ebp
+  400492:	49 89 d1             	mov    %rdx,%r9
+  400495:	5e                   	pop    %rsi
+  400496:	48 89 e2             	mov    %rsp,%rdx
+  400499:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40049d:	50                   	push   %rax
+  40049e:	54                   	push   %rsp
+  40049f:	49 c7 c0 00 08 40 00 	mov    $0x400800,%r8
+  4004a6:	48 c7 c1 90 07 40 00 	mov    $0x400790,%rcx
+  4004ad:	48 c7 c7 92 06 40 00 	mov    $0x400692,%rdi
+  4004b4:	e8 a7 ff ff ff       	callq  400460 <__libc_start_main@plt>
+  4004b9:	f4                   	hlt    
+  4004ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004004c0 <deregister_tm_clones>:
+  4004c0:	b8 4f 10 60 00       	mov    $0x60104f,%eax
+  4004c5:	55                   	push   %rbp
+  4004c6:	48 2d 48 10 60 00    	sub    $0x601048,%rax
+  4004cc:	48 83 f8 0e          	cmp    $0xe,%rax
+  4004d0:	48 89 e5             	mov    %rsp,%rbp
+  4004d3:	77 02                	ja     4004d7 <deregister_tm_clones+0x17>
+  4004d5:	5d                   	pop    %rbp
+  4004d6:	c3                   	retq   
+  4004d7:	b8 00 00 00 00       	mov    $0x0,%eax
+  4004dc:	48 85 c0             	test   %rax,%rax
+  4004df:	74 f4                	je     4004d5 <deregister_tm_clones+0x15>
+  4004e1:	5d                   	pop    %rbp
+  4004e2:	bf 48 10 60 00       	mov    $0x601048,%edi
+  4004e7:	ff e0                	jmpq   *%rax
+  4004e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000004004f0 <register_tm_clones>:
+  4004f0:	b8 48 10 60 00       	mov    $0x601048,%eax
+  4004f5:	55                   	push   %rbp
+  4004f6:	48 2d 48 10 60 00    	sub    $0x601048,%rax
+  4004fc:	48 c1 f8 03          	sar    $0x3,%rax
+  400500:	48 89 e5             	mov    %rsp,%rbp
+  400503:	48 89 c2             	mov    %rax,%rdx
+  400506:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  40050a:	48 01 d0             	add    %rdx,%rax
+  40050d:	48 d1 f8             	sar    %rax
+  400510:	75 02                	jne    400514 <register_tm_clones+0x24>
+  400512:	5d                   	pop    %rbp
+  400513:	c3                   	retq   
+  400514:	ba 00 00 00 00       	mov    $0x0,%edx
+  400519:	48 85 d2             	test   %rdx,%rdx
+  40051c:	74 f4                	je     400512 <register_tm_clones+0x22>
+  40051e:	5d                   	pop    %rbp
+  40051f:	48 89 c6             	mov    %rax,%rsi
+  400522:	bf 48 10 60 00       	mov    $0x601048,%edi
+  400527:	ff e2                	jmpq   *%rdx
+  400529:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400530 <__do_global_dtors_aux>:
+  400530:	80 3d 11 0b 20 00 00 	cmpb   $0x0,0x200b11(%rip)        # 601048 <__TMC_END__>
+  400537:	75 11                	jne    40054a <__do_global_dtors_aux+0x1a>
+  400539:	55                   	push   %rbp
+  40053a:	48 89 e5             	mov    %rsp,%rbp
+  40053d:	e8 7e ff ff ff       	callq  4004c0 <deregister_tm_clones>
+  400542:	5d                   	pop    %rbp
+  400543:	c6 05 fe 0a 20 00 01 	movb   $0x1,0x200afe(%rip)        # 601048 <__TMC_END__>
+  40054a:	f3 c3                	repz retq 
+  40054c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400550 <frame_dummy>:
+  400550:	48 83 3d c8 08 20 00 	cmpq   $0x0,0x2008c8(%rip)        # 600e20 <__JCR_END__>
+  400557:	00 
+  400558:	74 1e                	je     400578 <frame_dummy+0x28>
+  40055a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40055f:	48 85 c0             	test   %rax,%rax
+  400562:	74 14                	je     400578 <frame_dummy+0x28>
+  400564:	55                   	push   %rbp
+  400565:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  40056a:	48 89 e5             	mov    %rsp,%rbp
+  40056d:	ff d0                	callq  *%rax
+  40056f:	5d                   	pop    %rbp
+  400570:	e9 7b ff ff ff       	jmpq   4004f0 <register_tm_clones>
+  400575:	0f 1f 00             	nopl   (%rax)
+  400578:	e9 73 ff ff ff       	jmpq   4004f0 <register_tm_clones>
+
+000000000040057d <insert>:
+	int payload;
+	struct binary_tree *left;
+	struct binary_tree *right;
+};
+
+void insert(struct binary_tree *root, struct binary_tree *element) {
+  40057d:	55                   	push   %rbp
+  40057e:	48 89 e5             	mov    %rsp,%rbp
+  400581:	48 83 ec 10          	sub    $0x10,%rsp
+  400585:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400589:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+	if(element->payload < root->payload) {
+  40058d:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400591:	8b 10                	mov    (%rax),%edx
+  400593:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400597:	8b 00                	mov    (%rax),%eax
+  400599:	39 c2                	cmp    %eax,%edx
+  40059b:	7d 34                	jge    4005d1 <insert+0x54>
+		if(root->left != NULL) {
+  40059d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005a1:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4005a5:	48 85 c0             	test   %rax,%rax
+  4005a8:	74 19                	je     4005c3 <insert+0x46>
+			insert(root->left, element);
+  4005aa:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005ae:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4005b2:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4005b6:	48 89 d6             	mov    %rdx,%rsi
+  4005b9:	48 89 c7             	mov    %rax,%rdi
+  4005bc:	e8 bc ff ff ff       	callq  40057d <insert>
+  4005c1:	eb 50                	jmp    400613 <insert+0x96>
+		} else {
+			root->left = element;
+  4005c3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005c7:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4005cb:	48 89 50 08          	mov    %rdx,0x8(%rax)
+  4005cf:	eb 42                	jmp    400613 <insert+0x96>
+		}
+	} else if(element->payload > root->payload) {
+  4005d1:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4005d5:	8b 10                	mov    (%rax),%edx
+  4005d7:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005db:	8b 00                	mov    (%rax),%eax
+  4005dd:	39 c2                	cmp    %eax,%edx
+  4005df:	7e 32                	jle    400613 <insert+0x96>
+		if(root->right != NULL) {
+  4005e1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005e5:	48 8b 40 10          	mov    0x10(%rax),%rax
+  4005e9:	48 85 c0             	test   %rax,%rax
+  4005ec:	74 19                	je     400607 <insert+0x8a>
+			insert(root->right, element);
+  4005ee:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4005f2:	48 8b 40 10          	mov    0x10(%rax),%rax
+  4005f6:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  4005fa:	48 89 d6             	mov    %rdx,%rsi
+  4005fd:	48 89 c7             	mov    %rax,%rdi
+  400600:	e8 78 ff ff ff       	callq  40057d <insert>
+  400605:	eb 0c                	jmp    400613 <insert+0x96>
+		} else {
+			root->right = element;
+  400607:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40060b:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  40060f:	48 89 50 10          	mov    %rdx,0x10(%rax)
+		}
+	}
+}
+  400613:	c9                   	leaveq 
+  400614:	c3                   	retq   
+
+0000000000400615 <print_tree>:
+
+void print_tree(struct binary_tree *root) {
+  400615:	55                   	push   %rbp
+  400616:	48 89 e5             	mov    %rsp,%rbp
+  400619:	48 83 ec 10          	sub    $0x10,%rsp
+  40061d:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+	if(root->left != NULL) {
+  400621:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400625:	48 8b 40 08          	mov    0x8(%rax),%rax
+  400629:	48 85 c0             	test   %rax,%rax
+  40062c:	74 1f                	je     40064d <print_tree+0x38>
+		printf("[l]");
+  40062e:	bf 14 08 40 00       	mov    $0x400814,%edi
+  400633:	b8 00 00 00 00       	mov    $0x0,%eax
+  400638:	e8 13 fe ff ff       	callq  400450 <printf@plt>
+		print_tree(root->left);
+  40063d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400641:	48 8b 40 08          	mov    0x8(%rax),%rax
+  400645:	48 89 c7             	mov    %rax,%rdi
+  400648:	e8 c8 ff ff ff       	callq  400615 <print_tree>
+	}
+	printf("%d\n", root->payload);
+  40064d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400651:	8b 00                	mov    (%rax),%eax
+  400653:	89 c6                	mov    %eax,%esi
+  400655:	bf 18 08 40 00       	mov    $0x400818,%edi
+  40065a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40065f:	e8 ec fd ff ff       	callq  400450 <printf@plt>
+	if(root->right != NULL){
+  400664:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400668:	48 8b 40 10          	mov    0x10(%rax),%rax
+  40066c:	48 85 c0             	test   %rax,%rax
+  40066f:	74 1f                	je     400690 <print_tree+0x7b>
+		printf("[r]");
+  400671:	bf 1c 08 40 00       	mov    $0x40081c,%edi
+  400676:	b8 00 00 00 00       	mov    $0x0,%eax
+  40067b:	e8 d0 fd ff ff       	callq  400450 <printf@plt>
+		print_tree(root->right);
+  400680:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400684:	48 8b 40 10          	mov    0x10(%rax),%rax
+  400688:	48 89 c7             	mov    %rax,%rdi
+  40068b:	e8 85 ff ff ff       	callq  400615 <print_tree>
+	}
+}
+  400690:	c9                   	leaveq 
+  400691:	c3                   	retq   
+
+0000000000400692 <main>:
+
+int main(int argc, char **argv) {    
+  400692:	55                   	push   %rbp
+  400693:	48 89 e5             	mov    %rsp,%rbp
+  400696:	48 83 ec 70          	sub    $0x70,%rsp
+  40069a:	89 7d 9c             	mov    %edi,-0x64(%rbp)
+  40069d:	48 89 75 90          	mov    %rsi,-0x70(%rbp)
+
+	int payload[] = {20, 10, 5, 15, 30, 25, 35, 60, 50, 45, 55, 70, 65, 75};
+  4006a1:	c7 45 c0 14 00 00 00 	movl   $0x14,-0x40(%rbp)
+  4006a8:	c7 45 c4 0a 00 00 00 	movl   $0xa,-0x3c(%rbp)
+  4006af:	c7 45 c8 05 00 00 00 	movl   $0x5,-0x38(%rbp)
+  4006b6:	c7 45 cc 0f 00 00 00 	movl   $0xf,-0x34(%rbp)
+  4006bd:	c7 45 d0 1e 00 00 00 	movl   $0x1e,-0x30(%rbp)
+  4006c4:	c7 45 d4 19 00 00 00 	movl   $0x19,-0x2c(%rbp)
+  4006cb:	c7 45 d8 23 00 00 00 	movl   $0x23,-0x28(%rbp)
+  4006d2:	c7 45 dc 3c 00 00 00 	movl   $0x3c,-0x24(%rbp)
+  4006d9:	c7 45 e0 32 00 00 00 	movl   $0x32,-0x20(%rbp)
+  4006e0:	c7 45 e4 2d 00 00 00 	movl   $0x2d,-0x1c(%rbp)
+  4006e7:	c7 45 e8 37 00 00 00 	movl   $0x37,-0x18(%rbp)
+  4006ee:	c7 45 ec 46 00 00 00 	movl   $0x46,-0x14(%rbp)
+  4006f5:	c7 45 f0 41 00 00 00 	movl   $0x41,-0x10(%rbp)
+  4006fc:	c7 45 f4 4b 00 00 00 	movl   $0x4b,-0xc(%rbp)
+	int i;
+	int root_payload = 40;
+  400703:	c7 45 a8 28 00 00 00 	movl   $0x28,-0x58(%rbp)
+	int payload_len = 14;
+  40070a:	c7 45 ac 0e 00 00 00 	movl   $0xe,-0x54(%rbp)
+	struct binary_tree *root;
+	struct binary_tree *elem_tmp;
+
+	root = malloc(sizeof(*root));
+  400711:	bf 18 00 00 00       	mov    $0x18,%edi
+  400716:	e8 65 fd ff ff       	callq  400480 <malloc@plt>
+  40071b:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+	root->left = root->right = NULL;
+  40071f:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  400723:	48 c7 40 10 00 00 00 	movq   $0x0,0x10(%rax)
+  40072a:	00 
+  40072b:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  40072f:	48 8b 50 10          	mov    0x10(%rax),%rdx
+  400733:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  400737:	48 89 50 08          	mov    %rdx,0x8(%rax)
+	root->payload = root_payload;
+  40073b:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  40073f:	8b 55 a8             	mov    -0x58(%rbp),%edx
+  400742:	89 10                	mov    %edx,(%rax)
+
+	for(i = 0; i<payload_len; i++) {
+  400744:	c7 45 a4 00 00 00 00 	movl   $0x0,-0x5c(%rbp)
+  40074b:	eb 34                	jmp    400781 <main+0xef>
+		elem_tmp = malloc(sizeof(*elem_tmp));
+  40074d:	bf 18 00 00 00       	mov    $0x18,%edi
+  400752:	e8 29 fd ff ff       	callq  400480 <malloc@plt>
+  400757:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+		elem_tmp->payload = payload[i];
+  40075b:	8b 45 a4             	mov    -0x5c(%rbp),%eax
+  40075e:	48 98                	cltq   
+  400760:	8b 54 85 c0          	mov    -0x40(%rbp,%rax,4),%edx
+  400764:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  400768:	89 10                	mov    %edx,(%rax)
+		insert(root, elem_tmp);
+  40076a:	48 8b 55 b8          	mov    -0x48(%rbp),%rdx
+  40076e:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+  400772:	48 89 d6             	mov    %rdx,%rsi
+  400775:	48 89 c7             	mov    %rax,%rdi
+  400778:	e8 00 fe ff ff       	callq  40057d <insert>
+
+	root = malloc(sizeof(*root));
+	root->left = root->right = NULL;
+	root->payload = root_payload;
+
+	for(i = 0; i<payload_len; i++) {
+  40077d:	83 45 a4 01          	addl   $0x1,-0x5c(%rbp)
+  400781:	8b 45 a4             	mov    -0x5c(%rbp),%eax
+  400784:	3b 45 ac             	cmp    -0x54(%rbp),%eax
+  400787:	7c c4                	jl     40074d <main+0xbb>
+
+	//print_tree(root);
+
+	/* Leak memory :) */
+
+	return 0;
+  400789:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  40078e:	c9                   	leaveq 
+  40078f:	c3                   	retq   
+
+0000000000400790 <__libc_csu_init>:
+  400790:	41 57                	push   %r15
+  400792:	41 89 ff             	mov    %edi,%r15d
+  400795:	41 56                	push   %r14
+  400797:	49 89 f6             	mov    %rsi,%r14
+  40079a:	41 55                	push   %r13
+  40079c:	49 89 d5             	mov    %rdx,%r13
+  40079f:	41 54                	push   %r12
+  4007a1:	4c 8d 25 68 06 20 00 	lea    0x200668(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  4007a8:	55                   	push   %rbp
+  4007a9:	48 8d 2d 68 06 20 00 	lea    0x200668(%rip),%rbp        # 600e18 <__init_array_end>
+  4007b0:	53                   	push   %rbx
+  4007b1:	4c 29 e5             	sub    %r12,%rbp
+  4007b4:	31 db                	xor    %ebx,%ebx
+  4007b6:	48 c1 fd 03          	sar    $0x3,%rbp
+  4007ba:	48 83 ec 08          	sub    $0x8,%rsp
+  4007be:	e8 55 fc ff ff       	callq  400418 <_init>
+  4007c3:	48 85 ed             	test   %rbp,%rbp
+  4007c6:	74 1e                	je     4007e6 <__libc_csu_init+0x56>
+  4007c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4007cf:	00 
+  4007d0:	4c 89 ea             	mov    %r13,%rdx
+  4007d3:	4c 89 f6             	mov    %r14,%rsi
+  4007d6:	44 89 ff             	mov    %r15d,%edi
+  4007d9:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  4007dd:	48 83 c3 01          	add    $0x1,%rbx
+  4007e1:	48 39 eb             	cmp    %rbp,%rbx
+  4007e4:	75 ea                	jne    4007d0 <__libc_csu_init+0x40>
+  4007e6:	48 83 c4 08          	add    $0x8,%rsp
+  4007ea:	5b                   	pop    %rbx
+  4007eb:	5d                   	pop    %rbp
+  4007ec:	41 5c                	pop    %r12
+  4007ee:	41 5d                	pop    %r13
+  4007f0:	41 5e                	pop    %r14
+  4007f2:	41 5f                	pop    %r15
+  4007f4:	c3                   	retq   
+  4007f5:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  4007fc:	00 00 00 00 
+
+0000000000400800 <__libc_csu_fini>:
+  400800:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000400804 <_fini>:
+  400804:	48 83 ec 08          	sub    $0x8,%rsp
+  400808:	48 83 c4 08          	add    $0x8,%rsp
+  40080c:	c3                   	retq   

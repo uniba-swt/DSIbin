@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="ptg">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="vertices" />
+				<xs:element ref="edges" />
+				<xs:element ref="boxes" />
+				<xs:element ref="boxConnections" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="vertices">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="vertex" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- chunk of memory -->
+	<xs:element name="vertex">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- addresses are in hex -->
+				<xs:element name="bAddr" type="CpointerHex" />
+				<xs:element name="eAddr" type="CpointerHex" />
+				<!-- size is in byte -->
+				<xs:element name="size" type="xs:int" />
+				<xs:choice>
+					<xs:element ref="simple" />
+					<xs:element ref="array" />
+					<xs:element ref="struct" />
+				</xs:choice>
+			</xs:sequence>
+			<!-- unique over program lifetime (in contrast to edge ids, which are 
+				unique per time step) -->
+			<xs:attribute name="id" use="required" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- simple data type (no struct) -->
+	<xs:element name="simple">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="bAddr" type="CpointerHex" />
+				<xs:element name="eAddr" type="CpointerHex" />
+				<xs:element name="size" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- array of either: simple, struct or an array -->
+	<!-- the elements of the array will be uniform e.g. always of the same type -->
+	<xs:element name="array">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="bAddr" type="CpointerHex" />
+				<xs:element name="eAddr" type="CpointerHex" />
+				<xs:element name="size" type="xs:int" />
+				<xs:element name="numElems" type="xs:int" />
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="simple" />
+					<xs:element ref="array" />
+					<xs:element ref="struct" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="struct">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="bAddr" type="CpointerHex" />
+				<xs:element name="eAddr" type="CpointerHex" />
+				<xs:element name="size" type="xs:int" />
+				<xs:element ref="fields" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="fields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="field" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="field">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="simple" />
+					<xs:element ref="array" />
+					<xs:element ref="struct" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="edges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="edge" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="edge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="source">
+					<xs:complexType>
+						<xs:sequence>				
+							<xs:element ref="addrAsVertex" />					
+							<xs:element name="addr" type="CpointerHex" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="target">
+					<xs:complexType>
+						<xs:sequence>				
+							<xs:element ref="addrAsVertex" />					
+							<xs:element name="addr" type="CpointerHex" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<!-- unique per time step (in contrast to vertex ids, which are unique 
+				over program lifetime) -->
+			<xs:attribute name="id" use="required" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="addrAsVertex">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vertexId" type="xs:int" />
+				<xs:element name="offset" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+
+	<xs:element name="boxes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="cycles" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="box" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="box">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="linkageOffset" type="xs:int" />
+				<xs:element name="cycleId" type="xs:int" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element name="cells" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="cell" minOccurs="1" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="cycles">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="cycle" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="cycle">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="linkageOffset" type="xs:int" />
+				<xs:element name="cells">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="cell" minOccurs="2" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="cell">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="bAddr" type="CpointerHex" />
+				<xs:element name="eAddr" type="CpointerHex" />
+				<xs:element name="size" type="xs:int" />
+				<xs:element name="vertexId" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="boxConnections">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="boxConnection" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="boxConnection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="dll">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="boxId1" type="xs:int" />
+								<xs:element name="boxId2" type="xs:int" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="parentChild">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="boxId1" type="xs:int" />
+								<xs:element ref="cell" />
+								<xs:element name="boxId2" type="xs:int" />
+								<xs:element ref="cell" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="CpointerHex">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\(nil\)|0x[0-9a-f]+" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

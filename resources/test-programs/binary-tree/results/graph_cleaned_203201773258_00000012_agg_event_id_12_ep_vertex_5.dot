@@ -1,0 +1,10 @@
+digraph G {
+	"dsnaming.DsOliMetaBoxGraphVertexBoxes@5150974c" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@b17867b" [dir = none, label = <<TABLE BORDER="0" ALIGN="left" BGCOLOR="#CCCCCC" COLOR="black" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 193 tag: ovl off: 16:8</TD></TR><TR><TD COLSPAN="2"> N: 15-&gt;28, -</TD></TR><TR><TD ALIGN="left" BGCOLOR="#66CCFF">BT</TD><TD ALIGN="left" BGCOLOR="#66CCFF">3666 (1833)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#3366FF">No</TD><TD ALIGN="left" BGCOLOR="#3366FF">100 (100)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#00FFCC">I1o</TD><TD ALIGN="left" BGCOLOR="#00FFCC">38 (38)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (1971)</TD></TR></TABLE>>, color = "#66CCFF"]
+	"dsnaming.DsOliMetaBoxGraphVertexEP@126e0735" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@5150974c" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 41 tag: ptr off: 0:8</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (587)</TD></TR></TABLE>>]
+	subgraph connected_vertices {
+		rankdir = LR
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@5150974c"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@5150974c</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@8): dont_care: Set(25, 6, 33, 2, 23, 4, 15)  maxStrandLength: 4</TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexEP@126e0735"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexEP@126e0735</TD></TR><TR><TD COLSPAN="2">ep: 5 start: 41 end: 722 aggCnt: 587</TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@b17867b"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@b17867b</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@16): dont_care: Set(20, 28, 9, 17, 12, 35, 30)  maxStrandLength: 4</TD></TR></TABLE>>, shape = none]
+	}
+}

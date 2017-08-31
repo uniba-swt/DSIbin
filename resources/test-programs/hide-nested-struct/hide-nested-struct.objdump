@@ -1,0 +1,403 @@
+
+hide-nested-struct/hide-nested-struct:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400450 <_init>:
+  400450:	48 83 ec 08          	sub    $0x8,%rsp
+  400454:	48 8b 05 9d 0b 20 00 	mov    0x200b9d(%rip),%rax        # 600ff8 <_DYNAMIC+0x1d0>
+  40045b:	48 85 c0             	test   %rax,%rax
+  40045e:	74 05                	je     400465 <_init+0x15>
+  400460:	e8 4b 00 00 00       	callq  4004b0 <__gmon_start__@plt>
+  400465:	48 83 c4 08          	add    $0x8,%rsp
+  400469:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400470 <puts@plt-0x10>:
+  400470:	ff 35 92 0b 20 00    	pushq  0x200b92(%rip)        # 601008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400476:	ff 25 94 0b 20 00    	jmpq   *0x200b94(%rip)        # 601010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40047c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400480 <puts@plt>:
+  400480:	ff 25 92 0b 20 00    	jmpq   *0x200b92(%rip)        # 601018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400486:	68 00 00 00 00       	pushq  $0x0
+  40048b:	e9 e0 ff ff ff       	jmpq   400470 <_init+0x20>
+
+0000000000400490 <printf@plt>:
+  400490:	ff 25 8a 0b 20 00    	jmpq   *0x200b8a(%rip)        # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400496:	68 01 00 00 00       	pushq  $0x1
+  40049b:	e9 d0 ff ff ff       	jmpq   400470 <_init+0x20>
+
+00000000004004a0 <__libc_start_main@plt>:
+  4004a0:	ff 25 82 0b 20 00    	jmpq   *0x200b82(%rip)        # 601028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  4004a6:	68 02 00 00 00       	pushq  $0x2
+  4004ab:	e9 c0 ff ff ff       	jmpq   400470 <_init+0x20>
+
+00000000004004b0 <__gmon_start__@plt>:
+  4004b0:	ff 25 7a 0b 20 00    	jmpq   *0x200b7a(%rip)        # 601030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  4004b6:	68 03 00 00 00       	pushq  $0x3
+  4004bb:	e9 b0 ff ff ff       	jmpq   400470 <_init+0x20>
+
+00000000004004c0 <malloc@plt>:
+  4004c0:	ff 25 72 0b 20 00    	jmpq   *0x200b72(%rip)        # 601038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  4004c6:	68 04 00 00 00       	pushq  $0x4
+  4004cb:	e9 a0 ff ff ff       	jmpq   400470 <_init+0x20>
+
+Disassembly of section .text:
+
+00000000004004d0 <_start>:
+  4004d0:	31 ed                	xor    %ebp,%ebp
+  4004d2:	49 89 d1             	mov    %rdx,%r9
+  4004d5:	5e                   	pop    %rsi
+  4004d6:	48 89 e2             	mov    %rsp,%rdx
+  4004d9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  4004dd:	50                   	push   %rax
+  4004de:	54                   	push   %rsp
+  4004df:	49 c7 c0 30 08 40 00 	mov    $0x400830,%r8
+  4004e6:	48 c7 c1 c0 07 40 00 	mov    $0x4007c0,%rcx
+  4004ed:	48 c7 c7 2c 07 40 00 	mov    $0x40072c,%rdi
+  4004f4:	e8 a7 ff ff ff       	callq  4004a0 <__libc_start_main@plt>
+  4004f9:	f4                   	hlt    
+  4004fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400500 <deregister_tm_clones>:
+  400500:	b8 57 10 60 00       	mov    $0x601057,%eax
+  400505:	55                   	push   %rbp
+  400506:	48 2d 50 10 60 00    	sub    $0x601050,%rax
+  40050c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400510:	48 89 e5             	mov    %rsp,%rbp
+  400513:	77 02                	ja     400517 <deregister_tm_clones+0x17>
+  400515:	5d                   	pop    %rbp
+  400516:	c3                   	retq   
+  400517:	b8 00 00 00 00       	mov    $0x0,%eax
+  40051c:	48 85 c0             	test   %rax,%rax
+  40051f:	74 f4                	je     400515 <deregister_tm_clones+0x15>
+  400521:	5d                   	pop    %rbp
+  400522:	bf 50 10 60 00       	mov    $0x601050,%edi
+  400527:	ff e0                	jmpq   *%rax
+  400529:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400530 <register_tm_clones>:
+  400530:	b8 50 10 60 00       	mov    $0x601050,%eax
+  400535:	55                   	push   %rbp
+  400536:	48 2d 50 10 60 00    	sub    $0x601050,%rax
+  40053c:	48 c1 f8 03          	sar    $0x3,%rax
+  400540:	48 89 e5             	mov    %rsp,%rbp
+  400543:	48 89 c2             	mov    %rax,%rdx
+  400546:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  40054a:	48 01 d0             	add    %rdx,%rax
+  40054d:	48 d1 f8             	sar    %rax
+  400550:	75 02                	jne    400554 <register_tm_clones+0x24>
+  400552:	5d                   	pop    %rbp
+  400553:	c3                   	retq   
+  400554:	ba 00 00 00 00       	mov    $0x0,%edx
+  400559:	48 85 d2             	test   %rdx,%rdx
+  40055c:	74 f4                	je     400552 <register_tm_clones+0x22>
+  40055e:	5d                   	pop    %rbp
+  40055f:	48 89 c6             	mov    %rax,%rsi
+  400562:	bf 50 10 60 00       	mov    $0x601050,%edi
+  400567:	ff e2                	jmpq   *%rdx
+  400569:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400570 <__do_global_dtors_aux>:
+  400570:	80 3d d9 0a 20 00 00 	cmpb   $0x0,0x200ad9(%rip)        # 601050 <__TMC_END__>
+  400577:	75 11                	jne    40058a <__do_global_dtors_aux+0x1a>
+  400579:	55                   	push   %rbp
+  40057a:	48 89 e5             	mov    %rsp,%rbp
+  40057d:	e8 7e ff ff ff       	callq  400500 <deregister_tm_clones>
+  400582:	5d                   	pop    %rbp
+  400583:	c6 05 c6 0a 20 00 01 	movb   $0x1,0x200ac6(%rip)        # 601050 <__TMC_END__>
+  40058a:	f3 c3                	repz retq 
+  40058c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400590 <frame_dummy>:
+  400590:	48 83 3d 88 08 20 00 	cmpq   $0x0,0x200888(%rip)        # 600e20 <__JCR_END__>
+  400597:	00 
+  400598:	74 1e                	je     4005b8 <frame_dummy+0x28>
+  40059a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40059f:	48 85 c0             	test   %rax,%rax
+  4005a2:	74 14                	je     4005b8 <frame_dummy+0x28>
+  4005a4:	55                   	push   %rbp
+  4005a5:	bf 20 0e 60 00       	mov    $0x600e20,%edi
+  4005aa:	48 89 e5             	mov    %rsp,%rbp
+  4005ad:	ff d0                	callq  *%rax
+  4005af:	5d                   	pop    %rbp
+  4005b0:	e9 7b ff ff ff       	jmpq   400530 <register_tm_clones>
+  4005b5:	0f 1f 00             	nopl   (%rax)
+  4005b8:	e9 73 ff ff ff       	jmpq   400530 <register_tm_clones>
+
+00000000004005bd <create_barrier_nodes>:
+#define offsetof(st, m) ((size_t)&(((st *)0)->m))
+#define container_of(ptr, type, member) ({ \
+		const typeof( ((type *)0)->member ) *__mptr = (ptr); \
+		(type *)( (char *)__mptr - offsetof(type,member) );})
+
+barrier_node* create_barrier_nodes(int barrier_size, int barrier_cnt) {
+  4005bd:	55                   	push   %rbp
+  4005be:	48 89 e5             	mov    %rsp,%rbp
+  4005c1:	48 83 ec 30          	sub    $0x30,%rsp
+  4005c5:	89 7d dc             	mov    %edi,-0x24(%rbp)
+  4005c8:	89 75 d8             	mov    %esi,-0x28(%rbp)
+	int i;
+
+	barrier_node *barriers_head = NULL;
+  4005cb:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+  4005d2:	00 
+	barrier_node *barriers_tail = NULL;
+  4005d3:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  4005da:	00 
+
+	for(i = 0; i< barrier_cnt; i++){
+  4005db:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  4005e2:	e9 bd 00 00 00       	jmpq   4006a4 <create_barrier_nodes+0xe7>
+		if(!barriers_head){
+  4005e7:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  4005ec:	75 2e                	jne    40061c <create_barrier_nodes+0x5f>
+			printf("create_barrier_nodes: created head\n");
+  4005ee:	bf 48 08 40 00       	mov    $0x400848,%edi
+  4005f3:	e8 88 fe ff ff       	callq  400480 <puts@plt>
+			barriers_head = malloc(sizeof(*barriers_head));
+  4005f8:	bf 28 00 00 00       	mov    $0x28,%edi
+  4005fd:	e8 be fe ff ff       	callq  4004c0 <malloc@plt>
+  400602:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+			barriers_head->list.next = NULL;
+  400606:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  40060a:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  400611:	00 
+			barriers_tail = barriers_head;
+  400612:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400616:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  40061a:	eb 5e                	jmp    40067a <create_barrier_nodes+0xbd>
+		} else {
+			printf("create_barrier_nodes: created tail\n");
+  40061c:	bf 70 08 40 00       	mov    $0x400870,%edi
+  400621:	e8 5a fe ff ff       	callq  400480 <puts@plt>
+
+			barrier_node *tmp = malloc(sizeof(*tmp));
+  400626:	bf 28 00 00 00       	mov    $0x28,%edi
+  40062b:	e8 90 fe ff ff       	callq  4004c0 <malloc@plt>
+  400630:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+			// Terminate with NULL
+			tmp->barrier = NULL;
+  400634:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400638:	48 c7 40 20 00 00 00 	movq   $0x0,0x20(%rax)
+  40063f:	00 
+
+			// Set the linkage
+			barriers_tail->list.next = &(tmp->list);
+  400640:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400644:	48 8d 50 08          	lea    0x8(%rax),%rdx
+  400648:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  40064c:	48 89 50 08          	mov    %rdx,0x8(%rax)
+
+			printf("barriers_tail: %p\n", barriers_tail);
+  400650:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400654:	48 89 c6             	mov    %rax,%rsi
+  400657:	bf 93 08 40 00       	mov    $0x400893,%edi
+  40065c:	b8 00 00 00 00       	mov    $0x0,%eax
+  400661:	e8 2a fe ff ff       	callq  400490 <printf@plt>
+
+			// New element has no next element
+			tmp->list.next = NULL;
+  400666:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40066a:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  400671:	00 
+
+			// Set the new tail
+			barriers_tail = tmp;
+  400672:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400676:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+		}
+
+		barriers_tail->payload_barrier = i*barrier_size;
+  40067a:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  40067d:	0f af 45 dc          	imul   -0x24(%rbp),%eax
+  400681:	89 c2                	mov    %eax,%edx
+  400683:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400687:	89 10                	mov    %edx,(%rax)
+		// Mark element as unused
+		printf("create_barrier_nodes: setting barrier value %d\n", barriers_tail->payload_barrier);
+  400689:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  40068d:	8b 00                	mov    (%rax),%eax
+  40068f:	89 c6                	mov    %eax,%esi
+  400691:	bf a8 08 40 00       	mov    $0x4008a8,%edi
+  400696:	b8 00 00 00 00       	mov    $0x0,%eax
+  40069b:	e8 f0 fd ff ff       	callq  400490 <printf@plt>
+	int i;
+
+	barrier_node *barriers_head = NULL;
+	barrier_node *barriers_tail = NULL;
+
+	for(i = 0; i< barrier_cnt; i++){
+  4006a0:	83 45 e4 01          	addl   $0x1,-0x1c(%rbp)
+  4006a4:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  4006a7:	3b 45 d8             	cmp    -0x28(%rbp),%eax
+  4006aa:	0f 8c 37 ff ff ff    	jl     4005e7 <create_barrier_nodes+0x2a>
+
+		barriers_tail->payload_barrier = i*barrier_size;
+		// Mark element as unused
+		printf("create_barrier_nodes: setting barrier value %d\n", barriers_tail->payload_barrier);
+	}
+	return barriers_head;
+  4006b0:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+}
+  4006b4:	c9                   	leaveq 
+  4006b5:	c3                   	retq   
+
+00000000004006b6 <print_all_barriers>:
+
+void print_all_barriers(barrier_node *barriers){
+  4006b6:	55                   	push   %rbp
+  4006b7:	48 89 e5             	mov    %rsp,%rbp
+  4006ba:	48 83 ec 30          	sub    $0x30,%rsp
+  4006be:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+	barrier_node *iter = barriers;
+  4006c2:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  4006c6:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+	while(iter != NULL){
+  4006ca:	eb 57                	jmp    400723 <print_all_barriers+0x6d>
+		// Fetch the surrounding container
+		if(iter->list.next){
+  4006cc:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4006d0:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4006d4:	48 85 c0             	test   %rax,%rax
+  4006d7:	74 3e                	je     400717 <print_all_barriers+0x61>
+			barrier_node *tmp = container_of(iter->list.next, barrier_node, list);
+  4006d9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  4006dd:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4006e1:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  4006e5:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  4006e9:	48 83 e8 08          	sub    $0x8,%rax
+  4006ed:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+			iter = tmp;
+  4006f1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006f5:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+			printf("print_all_barriers: iter: %p payload: %d\n", tmp, tmp->payload_barrier);
+  4006f9:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  4006fd:	8b 10                	mov    (%rax),%edx
+  4006ff:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400703:	48 89 c6             	mov    %rax,%rsi
+  400706:	bf d8 08 40 00       	mov    $0x4008d8,%edi
+  40070b:	b8 00 00 00 00       	mov    $0x0,%eax
+  400710:	e8 7b fd ff ff       	callq  400490 <printf@plt>
+  400715:	eb 0c                	jmp    400723 <print_all_barriers+0x6d>
+		} else {
+			printf("iter->list.next is NULL\n");
+  400717:	bf 02 09 40 00       	mov    $0x400902,%edi
+  40071c:	e8 5f fd ff ff       	callq  400480 <puts@plt>
+			break;
+  400721:	eb 07                	jmp    40072a <print_all_barriers+0x74>
+	return barriers_head;
+}
+
+void print_all_barriers(barrier_node *barriers){
+	barrier_node *iter = barriers;
+	while(iter != NULL){
+  400723:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  400728:	75 a2                	jne    4006cc <print_all_barriers+0x16>
+		} else {
+			printf("iter->list.next is NULL\n");
+			break;
+		}
+	}
+}
+  40072a:	c9                   	leaveq 
+  40072b:	c3                   	retq   
+
+000000000040072c <main>:
+
+#define BARRIER_SIZE 100
+#define BARRIER_CNT  5
+int main(int argc, char **argv) {    
+  40072c:	55                   	push   %rbp
+  40072d:	48 89 e5             	mov    %rsp,%rbp
+  400730:	48 83 ec 50          	sub    $0x50,%rsp
+  400734:	89 7d bc             	mov    %edi,-0x44(%rbp)
+  400737:	48 89 75 b0          	mov    %rsi,-0x50(%rbp)
+
+	int list_elements[] = { 8, 16, 32, 64, 128, 256, 512, 1024, 2048 };
+  40073b:	c7 45 d0 08 00 00 00 	movl   $0x8,-0x30(%rbp)
+  400742:	c7 45 d4 10 00 00 00 	movl   $0x10,-0x2c(%rbp)
+  400749:	c7 45 d8 20 00 00 00 	movl   $0x20,-0x28(%rbp)
+  400750:	c7 45 dc 40 00 00 00 	movl   $0x40,-0x24(%rbp)
+  400757:	c7 45 e0 80 00 00 00 	movl   $0x80,-0x20(%rbp)
+  40075e:	c7 45 e4 00 01 00 00 	movl   $0x100,-0x1c(%rbp)
+  400765:	c7 45 e8 00 02 00 00 	movl   $0x200,-0x18(%rbp)
+  40076c:	c7 45 ec 00 04 00 00 	movl   $0x400,-0x14(%rbp)
+  400773:	c7 45 f0 00 08 00 00 	movl   $0x800,-0x10(%rbp)
+	int list_elements_size = 9, i;
+  40077a:	c7 45 c4 09 00 00 00 	movl   $0x9,-0x3c(%rbp)
+	printf("Creating barriers\n");
+  400781:	bf 1a 09 40 00       	mov    $0x40091a,%edi
+  400786:	e8 f5 fc ff ff       	callq  400480 <puts@plt>
+	barrier_node *barriers = create_barrier_nodes(BARRIER_SIZE, BARRIER_CNT);
+  40078b:	be 05 00 00 00       	mov    $0x5,%esi
+  400790:	bf 64 00 00 00       	mov    $0x64,%edi
+  400795:	e8 23 fe ff ff       	callq  4005bd <create_barrier_nodes>
+  40079a:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+
+	printf("Printing all barrier nodes:\n");
+  40079e:	bf 2c 09 40 00       	mov    $0x40092c,%edi
+  4007a3:	e8 d8 fc ff ff       	callq  400480 <puts@plt>
+	print_all_barriers(barriers);
+  4007a8:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  4007ac:	48 89 c7             	mov    %rax,%rdi
+  4007af:	e8 02 ff ff ff       	callq  4006b6 <print_all_barriers>
+
+	return 0;
+  4007b4:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  4007b9:	c9                   	leaveq 
+  4007ba:	c3                   	retq   
+  4007bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000004007c0 <__libc_csu_init>:
+  4007c0:	41 57                	push   %r15
+  4007c2:	41 89 ff             	mov    %edi,%r15d
+  4007c5:	41 56                	push   %r14
+  4007c7:	49 89 f6             	mov    %rsi,%r14
+  4007ca:	41 55                	push   %r13
+  4007cc:	49 89 d5             	mov    %rdx,%r13
+  4007cf:	41 54                	push   %r12
+  4007d1:	4c 8d 25 38 06 20 00 	lea    0x200638(%rip),%r12        # 600e10 <__frame_dummy_init_array_entry>
+  4007d8:	55                   	push   %rbp
+  4007d9:	48 8d 2d 38 06 20 00 	lea    0x200638(%rip),%rbp        # 600e18 <__init_array_end>
+  4007e0:	53                   	push   %rbx
+  4007e1:	4c 29 e5             	sub    %r12,%rbp
+  4007e4:	31 db                	xor    %ebx,%ebx
+  4007e6:	48 c1 fd 03          	sar    $0x3,%rbp
+  4007ea:	48 83 ec 08          	sub    $0x8,%rsp
+  4007ee:	e8 5d fc ff ff       	callq  400450 <_init>
+  4007f3:	48 85 ed             	test   %rbp,%rbp
+  4007f6:	74 1e                	je     400816 <__libc_csu_init+0x56>
+  4007f8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4007ff:	00 
+  400800:	4c 89 ea             	mov    %r13,%rdx
+  400803:	4c 89 f6             	mov    %r14,%rsi
+  400806:	44 89 ff             	mov    %r15d,%edi
+  400809:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40080d:	48 83 c3 01          	add    $0x1,%rbx
+  400811:	48 39 eb             	cmp    %rbp,%rbx
+  400814:	75 ea                	jne    400800 <__libc_csu_init+0x40>
+  400816:	48 83 c4 08          	add    $0x8,%rsp
+  40081a:	5b                   	pop    %rbx
+  40081b:	5d                   	pop    %rbp
+  40081c:	41 5c                	pop    %r12
+  40081e:	41 5d                	pop    %r13
+  400820:	41 5e                	pop    %r14
+  400822:	41 5f                	pop    %r15
+  400824:	c3                   	retq   
+  400825:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  40082c:	00 00 00 00 
+
+0000000000400830 <__libc_csu_fini>:
+  400830:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000400834 <_fini>:
+  400834:	48 83 ec 08          	sub    $0x8,%rsp
+  400838:	48 83 c4 08          	add    $0x8,%rsp
+  40083c:	c3                   	retq   

@@ -1,0 +1,17 @@
+Function = 82383f5672a261cf94eddcd925cecca400
+struct{
+  0x0: INT16;
+  0x2: INT8;
+  0x14: INT16;
+  0x16: INT8;
+  0x28: INT32;
+  0x2c: INT32;
+  0x30: INT32;
+  0x34: INT32;
+  0x38: INT32;
+  0x3c: INT32;
+  0x40: INT64;
+  0x48: VOID*;
+  0x50: VOID*;
+}
+

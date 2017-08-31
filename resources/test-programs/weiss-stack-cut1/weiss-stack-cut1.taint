@@ -1,0 +1,11 @@
+Function = b0c693eef4cb77b5889565b7feed5cfb00
+struct{
+  0x8: VOID*;
+}
+
+Function = d04c5611e2eaf030d5ebe38c6d7c03c900
+struct{
+  0x0: INT32;
+  0x8: VOID*;
+}
+

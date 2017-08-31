@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="events">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="event" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="event">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="comment" />
+				<xs:element ref="operation-transition" />
+				<xs:element ref="block-transition" />
+				<xs:element ref="memory-write" />
+				<xs:element ref="variable-enter-scope" />
+				<xs:element ref="variable-left-scope" />
+				<xs:element ref="free" />
+			</xs:choice>
+			<xs:attribute name="id" use="required" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="sourceLocation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="file" type="xs:string" />
+				<xs:element name="line" type="xs:int" />
+				<xs:element name="column" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="operation-transition">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="entry">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:int" />
+							<xs:element name="name" type="xs:string" />
+							<xs:element name="arguments" type="xs:string" />
+							<xs:element name="comment" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="exit" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="tKind">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="entry" />
+			<xs:enumeration value="exit" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="block-transition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sourceLocation" />
+				<xs:element name="kind" type="tKind" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="memory-write">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sourceLocation" />
+				<xs:element name="context" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="address" type="CpointerHex" />
+							<xs:element name="type" type="xs:string" />
+							<xs:element name="codeFragment" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="lval">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="address" type="CpointerHex" />
+							<xs:element name="type" type="xs:string" />
+							<xs:element name="codeFragment" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>	
+				<xs:element name="content">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="content" type="CpointerHex" />
+							<xs:element name="lvalDerefType" type="xs:string" />
+							<xs:element name="rhsCodeFragment" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>									
+				<xs:element name="memory-allocation" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="malloc">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="argCodeFragment" type="xs:string" />
+										<xs:element name="argValue" type="xs:int" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="calloc">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="argCodeFragment" type="xs:string" />
+										<xs:element name="argChunkSize" type="xs:int" />
+										<xs:element name="argTimes" type="xs:int" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="realloc">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ptrArgCodeFragment" type="xs:string" />
+										<xs:element name="ptrArgValue" type="CpointerHex" />
+										<xs:element name="sizeArgCodeFragment" type="xs:string" />
+										<xs:element name="sizeArgValue" type="xs:int" />										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>							
+							<!-- add remaining alloc types -->
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="variable-enter-scope">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kind" type="xs:string" />
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="address" type="CpointerHex" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="variable-left-scope">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="address" type="CpointerHex" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+
+	<xs:element name="free">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sourceLocation" />
+				<xs:element name="argCodeFragment" type="xs:string" />
+				<xs:element name="argValue" type="CpointerHex" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="CpointerHex">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\(nil\)|0x[0-9a-f]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

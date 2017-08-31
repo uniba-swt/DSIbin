@@ -1,0 +1,131 @@
+Function = 500
+
+Function = 530
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x28: VOID*;
+-0x38: struct{
+         0x0: VOID*;
+         0x8: struct{
+                0x0: VOID*;
+                0x10: INT64;
+              };
+       };
+-0x40: INT64;
+-0x48: VOID*;
+-0x78: INT32;
+
+Function = 550
+-0x8: INT64;
+-0x10: VOID*;
+
+Function = 590
+-0x8: VOID*;
+-0x10: INT64;
+
+Function = 5e0
+
+Function = 650
+
+Function = 670
+
+Function = 69d
+-0x8: VOID*;
+-0x10: VOID*;
+-0x1c: INT32;
+-0x20: INT32;
+
+Function = 706
+-0x8: VOID*;
+-0x10: VOID*;
+-0x20: VOID*;
+
+Function = 749
+
+Function = 78b
+
+Function = 7cf
+
+Function = 7fe
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 8eb
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 93a
+-0x8: VOID*;
+-0x10: VOID*;
+-0x18: VOID*;
+-0x20: VOID*;
+-0x30: VOID*;
+
+Function = 9b0
+-0x8: VOID*;
+-0x10: VOID*;
+-0x18: VOID*;
+-0x20: VOID*;
+
+Function = aa3
+-0x8: VOID*;
+-0x18: VOID*;
+-0x20: struct{
+         0x0: VOID*;
+         0x10: VOID*;
+       };
+
+Function = b9d
+
+Function = c24
+-0x8: VOID*;
+-0x10: VOID*;
+-0x20: VOID*;
+
+Function = cb0
+-0x8: VOID*;
+-0x10: VOID*;
+-0x20: VOID*;
+
+Function = 11ff
+-0x8: VOID*;
+-0x18: VOID*;
+-0x20: VOID*;
+-0x30: VOID*;
+
+Function = 1434
+-0x8: VOID*;
+-0x10: VOID*;
+-0x18: VOID*;
+-0x20: VOID*;
+-0x28: VOID*;
+-0x2c: INT32;
+-0x30: INT32;
+-0x34: INT32;
+
+Function = 14db
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 1559
+-0x8: VOID*;
+-0x10: VOID*;
+
+Function = 1fea
+-0x8: INT64;
+-0x20: VOID*;
+-0x28: VOID*;
+-0x29: INT8;
+-0x3c: INT32;
+
+Function = 2090
+-0x8: INT64;
+-0x10: INT64;
+-0x18: VOID*;
+-0x20: INT64;
+-0x28: INT64;
+-0x30: INT64;
+
+Function = 2104
+

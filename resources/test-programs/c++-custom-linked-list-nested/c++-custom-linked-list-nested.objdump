@@ -1,0 +1,796 @@
+
+c++-custom-linked-list-nested/c++-custom-linked-list-nested:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400a08 <_init>:
+  400a08:	48 83 ec 08          	sub    $0x8,%rsp
+  400a0c:	48 8b 05 e5 15 20 00 	mov    0x2015e5(%rip),%rax        # 601ff8 <_DYNAMIC+0x1f0>
+  400a13:	48 85 c0             	test   %rax,%rax
+  400a16:	74 05                	je     400a1d <_init+0x15>
+  400a18:	e8 33 00 00 00       	callq  400a50 <__gmon_start__@plt>
+  400a1d:	48 83 c4 08          	add    $0x8,%rsp
+  400a21:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400a30 <printf@plt-0x10>:
+  400a30:	ff 35 d2 15 20 00    	pushq  0x2015d2(%rip)        # 602008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400a36:	ff 25 d4 15 20 00    	jmpq   *0x2015d4(%rip)        # 602010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400a3c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400a40 <printf@plt>:
+  400a40:	ff 25 d2 15 20 00    	jmpq   *0x2015d2(%rip)        # 602018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400a46:	68 00 00 00 00       	pushq  $0x0
+  400a4b:	e9 e0 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400a50 <__gmon_start__@plt>:
+  400a50:	ff 25 ca 15 20 00    	jmpq   *0x2015ca(%rip)        # 602020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400a56:	68 01 00 00 00       	pushq  $0x1
+  400a5b:	e9 d0 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400a60 <_ZNSt8ios_base4InitC1Ev@plt>:
+  400a60:	ff 25 c2 15 20 00    	jmpq   *0x2015c2(%rip)        # 602028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400a66:	68 02 00 00 00       	pushq  $0x2
+  400a6b:	e9 c0 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400a70 <__libc_start_main@plt>:
+  400a70:	ff 25 ba 15 20 00    	jmpq   *0x2015ba(%rip)        # 602030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400a76:	68 03 00 00 00       	pushq  $0x3
+  400a7b:	e9 b0 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400a80 <__cxa_atexit@plt>:
+  400a80:	ff 25 b2 15 20 00    	jmpq   *0x2015b2(%rip)        # 602038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400a86:	68 04 00 00 00       	pushq  $0x4
+  400a8b:	e9 a0 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400a90 <_ZNSt8ios_base4InitD1Ev@plt>:
+  400a90:	ff 25 aa 15 20 00    	jmpq   *0x2015aa(%rip)        # 602040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400a96:	68 05 00 00 00       	pushq  $0x5
+  400a9b:	e9 90 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
+  400aa0:	ff 25 a2 15 20 00    	jmpq   *0x2015a2(%rip)        # 602048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400aa6:	68 06 00 00 00       	pushq  $0x6
+  400aab:	e9 80 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400ab0 <_ZNSsD1Ev@plt>:
+  400ab0:	ff 25 9a 15 20 00    	jmpq   *0x20159a(%rip)        # 602050 <_GLOBAL_OFFSET_TABLE_+0x50>
+  400ab6:	68 07 00 00 00       	pushq  $0x7
+  400abb:	e9 70 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400ac0 <_ZNSsC1EPKcRKSaIcE@plt>:
+  400ac0:	ff 25 92 15 20 00    	jmpq   *0x201592(%rip)        # 602058 <_GLOBAL_OFFSET_TABLE_+0x58>
+  400ac6:	68 08 00 00 00       	pushq  $0x8
+  400acb:	e9 60 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400ad0 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>:
+  400ad0:	ff 25 8a 15 20 00    	jmpq   *0x20158a(%rip)        # 602060 <_GLOBAL_OFFSET_TABLE_+0x60>
+  400ad6:	68 09 00 00 00       	pushq  $0x9
+  400adb:	e9 50 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400ae0 <_ZNSaIcED1Ev@plt>:
+  400ae0:	ff 25 82 15 20 00    	jmpq   *0x201582(%rip)        # 602068 <_GLOBAL_OFFSET_TABLE_+0x68>
+  400ae6:	68 0a 00 00 00       	pushq  $0xa
+  400aeb:	e9 40 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400af0 <_ZNSolsEPFRSoS_E@plt>:
+  400af0:	ff 25 7a 15 20 00    	jmpq   *0x20157a(%rip)        # 602070 <_GLOBAL_OFFSET_TABLE_+0x70>
+  400af6:	68 0b 00 00 00       	pushq  $0xb
+  400afb:	e9 30 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400b00 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt>:
+  400b00:	ff 25 72 15 20 00    	jmpq   *0x201572(%rip)        # 602078 <_GLOBAL_OFFSET_TABLE_+0x78>
+  400b06:	68 0c 00 00 00       	pushq  $0xc
+  400b0b:	e9 20 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400b10 <_ZNSaIcEC1Ev@plt>:
+  400b10:	ff 25 6a 15 20 00    	jmpq   *0x20156a(%rip)        # 602080 <_GLOBAL_OFFSET_TABLE_+0x80>
+  400b16:	68 0d 00 00 00       	pushq  $0xd
+  400b1b:	e9 10 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400b20 <__gxx_personality_v0@plt>:
+  400b20:	ff 25 62 15 20 00    	jmpq   *0x201562(%rip)        # 602088 <_GLOBAL_OFFSET_TABLE_+0x88>
+  400b26:	68 0e 00 00 00       	pushq  $0xe
+  400b2b:	e9 00 ff ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400b30 <_Znwm@plt>:
+  400b30:	ff 25 5a 15 20 00    	jmpq   *0x20155a(%rip)        # 602090 <_GLOBAL_OFFSET_TABLE_+0x90>
+  400b36:	68 0f 00 00 00       	pushq  $0xf
+  400b3b:	e9 f0 fe ff ff       	jmpq   400a30 <_init+0x28>
+
+0000000000400b40 <_Unwind_Resume@plt>:
+  400b40:	ff 25 52 15 20 00    	jmpq   *0x201552(%rip)        # 602098 <_GLOBAL_OFFSET_TABLE_+0x98>
+  400b46:	68 10 00 00 00       	pushq  $0x10
+  400b4b:	e9 e0 fe ff ff       	jmpq   400a30 <_init+0x28>
+
+Disassembly of section .text:
+
+0000000000400b50 <_start>:
+  400b50:	31 ed                	xor    %ebp,%ebp
+  400b52:	49 89 d1             	mov    %rdx,%r9
+  400b55:	5e                   	pop    %rsi
+  400b56:	48 89 e2             	mov    %rsp,%rdx
+  400b59:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  400b5d:	50                   	push   %rax
+  400b5e:	54                   	push   %rsp
+  400b5f:	49 c7 c0 10 12 40 00 	mov    $0x401210,%r8
+  400b66:	48 c7 c1 a0 11 40 00 	mov    $0x4011a0,%rcx
+  400b6d:	48 c7 c7 91 0e 40 00 	mov    $0x400e91,%rdi
+  400b74:	e8 f7 fe ff ff       	callq  400a70 <__libc_start_main@plt>
+  400b79:	f4                   	hlt    
+  400b7a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400b80 <deregister_tm_clones>:
+  400b80:	b8 b7 20 60 00       	mov    $0x6020b7,%eax
+  400b85:	55                   	push   %rbp
+  400b86:	48 2d b0 20 60 00    	sub    $0x6020b0,%rax
+  400b8c:	48 83 f8 0e          	cmp    $0xe,%rax
+  400b90:	48 89 e5             	mov    %rsp,%rbp
+  400b93:	77 02                	ja     400b97 <deregister_tm_clones+0x17>
+  400b95:	5d                   	pop    %rbp
+  400b96:	c3                   	retq   
+  400b97:	b8 00 00 00 00       	mov    $0x0,%eax
+  400b9c:	48 85 c0             	test   %rax,%rax
+  400b9f:	74 f4                	je     400b95 <deregister_tm_clones+0x15>
+  400ba1:	5d                   	pop    %rbp
+  400ba2:	bf b0 20 60 00       	mov    $0x6020b0,%edi
+  400ba7:	ff e0                	jmpq   *%rax
+  400ba9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400bb0 <register_tm_clones>:
+  400bb0:	b8 b0 20 60 00       	mov    $0x6020b0,%eax
+  400bb5:	55                   	push   %rbp
+  400bb6:	48 2d b0 20 60 00    	sub    $0x6020b0,%rax
+  400bbc:	48 c1 f8 03          	sar    $0x3,%rax
+  400bc0:	48 89 e5             	mov    %rsp,%rbp
+  400bc3:	48 89 c2             	mov    %rax,%rdx
+  400bc6:	48 c1 ea 3f          	shr    $0x3f,%rdx
+  400bca:	48 01 d0             	add    %rdx,%rax
+  400bcd:	48 d1 f8             	sar    %rax
+  400bd0:	75 02                	jne    400bd4 <register_tm_clones+0x24>
+  400bd2:	5d                   	pop    %rbp
+  400bd3:	c3                   	retq   
+  400bd4:	ba 00 00 00 00       	mov    $0x0,%edx
+  400bd9:	48 85 d2             	test   %rdx,%rdx
+  400bdc:	74 f4                	je     400bd2 <register_tm_clones+0x22>
+  400bde:	5d                   	pop    %rbp
+  400bdf:	48 89 c6             	mov    %rax,%rsi
+  400be2:	bf b0 20 60 00       	mov    $0x6020b0,%edi
+  400be7:	ff e2                	jmpq   *%rdx
+  400be9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400bf0 <__do_global_dtors_aux>:
+  400bf0:	80 3d 39 16 20 00 00 	cmpb   $0x0,0x201639(%rip)        # 602230 <completed.6973>
+  400bf7:	75 11                	jne    400c0a <__do_global_dtors_aux+0x1a>
+  400bf9:	55                   	push   %rbp
+  400bfa:	48 89 e5             	mov    %rsp,%rbp
+  400bfd:	e8 7e ff ff ff       	callq  400b80 <deregister_tm_clones>
+  400c02:	5d                   	pop    %rbp
+  400c03:	c6 05 26 16 20 00 01 	movb   $0x1,0x201626(%rip)        # 602230 <completed.6973>
+  400c0a:	f3 c3                	repz retq 
+  400c0c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400c10 <frame_dummy>:
+  400c10:	48 83 3d e8 11 20 00 	cmpq   $0x0,0x2011e8(%rip)        # 601e00 <__JCR_END__>
+  400c17:	00 
+  400c18:	74 1e                	je     400c38 <frame_dummy+0x28>
+  400c1a:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c1f:	48 85 c0             	test   %rax,%rax
+  400c22:	74 14                	je     400c38 <frame_dummy+0x28>
+  400c24:	55                   	push   %rbp
+  400c25:	bf 00 1e 60 00       	mov    $0x601e00,%edi
+  400c2a:	48 89 e5             	mov    %rsp,%rbp
+  400c2d:	ff d0                	callq  *%rax
+  400c2f:	5d                   	pop    %rbp
+  400c30:	e9 7b ff ff ff       	jmpq   400bb0 <register_tm_clones>
+  400c35:	0f 1f 00             	nopl   (%rax)
+  400c38:	e9 73 ff ff ff       	jmpq   400bb0 <register_tm_clones>
+  400c3d:	90                   	nop
+
+0000000000400c3e <_ZN10NestedNodeC1Ei>:
+
+		// Iterate list starting from this element
+		void iterate(std::string label);
+};
+
+NestedNode::NestedNode(int value){
+  400c3e:	55                   	push   %rbp
+  400c3f:	48 89 e5             	mov    %rsp,%rbp
+  400c42:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400c46:	89 75 f4             	mov    %esi,-0xc(%rbp)
+	this->pnext = NULL;
+  400c49:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400c4d:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+	payload01 = value;
+  400c54:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400c58:	8b 55 f4             	mov    -0xc(%rbp),%edx
+  400c5b:	89 50 08             	mov    %edx,0x8(%rax)
+	payload02 = 2*value;
+  400c5e:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  400c61:	8d 14 00             	lea    (%rax,%rax,1),%edx
+  400c64:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400c68:	89 50 0c             	mov    %edx,0xc(%rax)
+}
+  400c6b:	5d                   	pop    %rbp
+  400c6c:	c3                   	retq   
+  400c6d:	90                   	nop
+
+0000000000400c6e <_ZN10NestedNode6insertEPS_>:
+
+void NestedNode::insert(NestedNode *newNode){
+  400c6e:	55                   	push   %rbp
+  400c6f:	48 89 e5             	mov    %rsp,%rbp
+  400c72:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400c76:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+	newNode->pnext = this->pnext;
+  400c7a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400c7e:	48 8b 10             	mov    (%rax),%rdx
+  400c81:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400c85:	48 89 10             	mov    %rdx,(%rax)
+	this->pnext = newNode;
+  400c88:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400c8c:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  400c90:	48 89 10             	mov    %rdx,(%rax)
+}
+  400c93:	5d                   	pop    %rbp
+  400c94:	c3                   	retq   
+  400c95:	90                   	nop
+
+0000000000400c96 <_ZN10NestedNode7iterateESs>:
+
+// Iterate list starting from this element
+void NestedNode::iterate(std::string label) {
+  400c96:	55                   	push   %rbp
+  400c97:	48 89 e5             	mov    %rsp,%rbp
+  400c9a:	48 83 ec 20          	sub    $0x20,%rsp
+  400c9e:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  400ca2:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+	NestedNode* iter = this;
+  400ca6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400caa:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+	while(iter) {
+  400cae:	eb 27                	jmp    400cd7 <_ZN10NestedNode7iterateESs+0x41>
+		std::cout << "\tChild Iterating elements " << std::endl;
+  400cb0:	be 28 12 40 00       	mov    $0x401228,%esi
+  400cb5:	bf 20 21 60 00       	mov    $0x602120,%edi
+  400cba:	e8 e1 fd ff ff       	callq  400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400cbf:	be 00 0b 40 00       	mov    $0x400b00,%esi
+  400cc4:	48 89 c7             	mov    %rax,%rdi
+  400cc7:	e8 24 fe ff ff       	callq  400af0 <_ZNSolsEPFRSoS_E@plt>
+		iter = iter->pnext;
+  400ccc:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400cd0:	48 8b 00             	mov    (%rax),%rax
+  400cd3:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+}
+
+// Iterate list starting from this element
+void NestedNode::iterate(std::string label) {
+	NestedNode* iter = this;
+	while(iter) {
+  400cd7:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  400cdc:	75 d2                	jne    400cb0 <_ZN10NestedNode7iterateESs+0x1a>
+		std::cout << "\tChild Iterating elements " << std::endl;
+		iter = iter->pnext;
+	}
+}
+  400cde:	c9                   	leaveq 
+  400cdf:	c3                   	retq   
+
+0000000000400ce0 <_ZN4NodeC1Ei>:
+    // Iterate list starting from this element
+    void iterate(std::string label);
+};
+
+// Constructor taking initial value:
+Node::Node( int value){
+  400ce0:	55                   	push   %rbp
+  400ce1:	48 89 e5             	mov    %rsp,%rbp
+  400ce4:	48 83 ec 10          	sub    $0x10,%rsp
+  400ce8:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400cec:	89 75 f4             	mov    %esi,-0xc(%rbp)
+  400cef:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400cf3:	48 c7 00 e0 12 40 00 	movq   $0x4012e0,(%rax)
+  400cfa:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400cfe:	48 83 c0 10          	add    $0x10,%rax
+  400d02:	be 00 00 00 00       	mov    $0x0,%esi
+  400d07:	48 89 c7             	mov    %rax,%rdi
+  400d0a:	e8 2f ff ff ff       	callq  400c3e <_ZN10NestedNodeC1Ei>
+    this->data = value;
+  400d0f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400d13:	8b 55 f4             	mov    -0xc(%rbp),%edx
+  400d16:	89 50 20             	mov    %edx,0x20(%rax)
+    this->pnext = NULL;
+  400d19:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400d1d:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  400d24:	00 
+}
+  400d25:	c9                   	leaveq 
+  400d26:	c3                   	retq   
+  400d27:	90                   	nop
+
+0000000000400d28 <_ZN4Node6insertEPS_>:
+
+// Insert node in front:
+void Node::insert( Node* newNode ){
+  400d28:	55                   	push   %rbp
+  400d29:	48 89 e5             	mov    %rsp,%rbp
+  400d2c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400d30:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    newNode->pnext = this->pnext;
+  400d34:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400d38:	48 8b 50 08          	mov    0x8(%rax),%rdx
+  400d3c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  400d40:	48 89 50 08          	mov    %rdx,0x8(%rax)
+    this->pnext = newNode;
+  400d44:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400d48:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  400d4c:	48 89 50 08          	mov    %rdx,0x8(%rax)
+}
+  400d50:	5d                   	pop    %rbp
+  400d51:	c3                   	retq   
+
+0000000000400d52 <_ZN4Node11remove_nextEv>:
+
+// Remove node in front:
+void Node::remove_next(){
+  400d52:	55                   	push   %rbp
+  400d53:	48 89 e5             	mov    %rsp,%rbp
+  400d56:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    return;
+  400d5a:	90                   	nop
+}
+  400d5b:	5d                   	pop    %rbp
+  400d5c:	c3                   	retq   
+  400d5d:	90                   	nop
+
+0000000000400d5e <_ZNK4Node4sizeEv>:
+
+// Calculate number of nodes in the list:
+size_t Node::size() const {
+  400d5e:	55                   	push   %rbp
+  400d5f:	48 89 e5             	mov    %rsp,%rbp
+  400d62:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    return 0;
+  400d66:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  400d6b:	5d                   	pop    %rbp
+  400d6c:	c3                   	retq   
+  400d6d:	90                   	nop
+
+0000000000400d6e <_ZNK4Node8distanceEPKS_>:
+
+// Calculate distance to other node:
+int Node::distance( Node const* other ) const {
+  400d6e:	55                   	push   %rbp
+  400d6f:	48 89 e5             	mov    %rsp,%rbp
+  400d72:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  400d76:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    return 0;
+  400d7a:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+  400d7f:	5d                   	pop    %rbp
+  400d80:	c3                   	retq   
+  400d81:	90                   	nop
+
+0000000000400d82 <_ZN4Node7iterateESs>:
+
+// Iterate list starting from this element
+void Node::iterate(std::string label) {
+  400d82:	55                   	push   %rbp
+  400d83:	48 89 e5             	mov    %rsp,%rbp
+  400d86:	53                   	push   %rbx
+  400d87:	48 83 ec 38          	sub    $0x38,%rsp
+  400d8b:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  400d8f:	48 89 75 c0          	mov    %rsi,-0x40(%rbp)
+	Node* iter = this;
+  400d93:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  400d97:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+	while(iter) {
+  400d9b:	e9 b2 00 00 00       	jmpq   400e52 <_ZN4Node7iterateESs+0xd0>
+		std::cout << label << "Iterating element" << std::endl;
+  400da0:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+  400da4:	48 89 c6             	mov    %rax,%rsi
+  400da7:	bf 20 21 60 00       	mov    $0x602120,%edi
+  400dac:	e8 1f fd ff ff       	callq  400ad0 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>
+  400db1:	be 43 12 40 00       	mov    $0x401243,%esi
+  400db6:	48 89 c7             	mov    %rax,%rdi
+  400db9:	e8 e2 fc ff ff       	callq  400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400dbe:	be 00 0b 40 00       	mov    $0x400b00,%esi
+  400dc3:	48 89 c7             	mov    %rax,%rdi
+  400dc6:	e8 25 fd ff ff       	callq  400af0 <_ZNSolsEPFRSoS_E@plt>
+		std::cout << label << "\tIterating children: " << std::endl;
+  400dcb:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+  400dcf:	48 89 c6             	mov    %rax,%rsi
+  400dd2:	bf 20 21 60 00       	mov    $0x602120,%edi
+  400dd7:	e8 f4 fc ff ff       	callq  400ad0 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>
+  400ddc:	be 55 12 40 00       	mov    $0x401255,%esi
+  400de1:	48 89 c7             	mov    %rax,%rdi
+  400de4:	e8 b7 fc ff ff       	callq  400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400de9:	be 00 0b 40 00       	mov    $0x400b00,%esi
+  400dee:	48 89 c7             	mov    %rax,%rdi
+  400df1:	e8 fa fc ff ff       	callq  400af0 <_ZNSolsEPFRSoS_E@plt>
+		iter->child.iterate(" child: ");
+  400df6:	48 8d 45 df          	lea    -0x21(%rbp),%rax
+  400dfa:	48 89 c7             	mov    %rax,%rdi
+  400dfd:	e8 0e fd ff ff       	callq  400b10 <_ZNSaIcEC1Ev@plt>
+  400e02:	48 8d 55 df          	lea    -0x21(%rbp),%rdx
+  400e06:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  400e0a:	be 6b 12 40 00       	mov    $0x40126b,%esi
+  400e0f:	48 89 c7             	mov    %rax,%rdi
+  400e12:	e8 a9 fc ff ff       	callq  400ac0 <_ZNSsC1EPKcRKSaIcE@plt>
+  400e17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400e1b:	48 8d 50 10          	lea    0x10(%rax),%rdx
+  400e1f:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  400e23:	48 89 c6             	mov    %rax,%rsi
+  400e26:	48 89 d7             	mov    %rdx,%rdi
+  400e29:	e8 68 fe ff ff       	callq  400c96 <_ZN10NestedNode7iterateESs>
+  400e2e:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  400e32:	48 89 c7             	mov    %rax,%rdi
+  400e35:	e8 76 fc ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  400e3a:	48 8d 45 df          	lea    -0x21(%rbp),%rax
+  400e3e:	48 89 c7             	mov    %rax,%rdi
+  400e41:	e8 9a fc ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+		iter = iter->pnext;
+  400e46:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400e4a:	48 8b 40 08          	mov    0x8(%rax),%rax
+  400e4e:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+}
+
+// Iterate list starting from this element
+void Node::iterate(std::string label) {
+	Node* iter = this;
+	while(iter) {
+  400e52:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  400e57:	0f 85 43 ff ff ff    	jne    400da0 <_ZN4Node7iterateESs+0x1e>
+  400e5d:	eb 2b                	jmp    400e8a <_ZN4Node7iterateESs+0x108>
+  400e5f:	48 89 c3             	mov    %rax,%rbx
+		std::cout << label << "Iterating element" << std::endl;
+		std::cout << label << "\tIterating children: " << std::endl;
+		iter->child.iterate(" child: ");
+  400e62:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  400e66:	48 89 c7             	mov    %rax,%rdi
+  400e69:	e8 42 fc ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  400e6e:	eb 03                	jmp    400e73 <_ZN4Node7iterateESs+0xf1>
+  400e70:	48 89 c3             	mov    %rax,%rbx
+  400e73:	48 8d 45 df          	lea    -0x21(%rbp),%rax
+  400e77:	48 89 c7             	mov    %rax,%rdi
+  400e7a:	e8 61 fc ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+  400e7f:	48 89 d8             	mov    %rbx,%rax
+  400e82:	48 89 c7             	mov    %rax,%rdi
+  400e85:	e8 b6 fc ff ff       	callq  400b40 <_Unwind_Resume@plt>
+		iter = iter->pnext;
+	}
+}
+  400e8a:	48 83 c4 38          	add    $0x38,%rsp
+  400e8e:	5b                   	pop    %rbx
+  400e8f:	5d                   	pop    %rbp
+  400e90:	c3                   	retq   
+
+0000000000400e91 <main>:
+
+int main() {
+  400e91:	55                   	push   %rbp
+  400e92:	48 89 e5             	mov    %rsp,%rbp
+  400e95:	53                   	push   %rbx
+  400e96:	48 83 ec 38          	sub    $0x38,%rsp
+	Node *head = new Node();
+  400e9a:	bf 28 00 00 00       	mov    $0x28,%edi
+  400e9f:	e8 8c fc ff ff       	callq  400b30 <_Znwm@plt>
+  400ea4:	48 89 c3             	mov    %rax,%rbx
+  400ea7:	be 00 00 00 00       	mov    $0x0,%esi
+  400eac:	48 89 df             	mov    %rbx,%rdi
+  400eaf:	e8 2c fe ff ff       	callq  400ce0 <_ZN4NodeC1Ei>
+  400eb4:	48 89 5d e0          	mov    %rbx,-0x20(%rbp)
+	printf("Head : %p, &next : %p, &data : %p\n", head, &head->pnext, &head->data);
+  400eb8:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400ebc:	48 8d 48 20          	lea    0x20(%rax),%rcx
+  400ec0:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400ec4:	48 8d 50 08          	lea    0x8(%rax),%rdx
+  400ec8:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400ecc:	48 89 c6             	mov    %rax,%rsi
+  400ecf:	bf 78 12 40 00       	mov    $0x401278,%edi
+  400ed4:	b8 00 00 00 00       	mov    $0x0,%eax
+  400ed9:	e8 62 fb ff ff       	callq  400a40 <printf@plt>
+	head->insert(new Node());
+  400ede:	bf 28 00 00 00       	mov    $0x28,%edi
+  400ee3:	e8 48 fc ff ff       	callq  400b30 <_Znwm@plt>
+  400ee8:	48 89 c3             	mov    %rax,%rbx
+  400eeb:	be 00 00 00 00       	mov    $0x0,%esi
+  400ef0:	48 89 df             	mov    %rbx,%rdi
+  400ef3:	e8 e8 fd ff ff       	callq  400ce0 <_ZN4NodeC1Ei>
+  400ef8:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400efc:	48 89 de             	mov    %rbx,%rsi
+  400eff:	48 89 c7             	mov    %rax,%rdi
+  400f02:	e8 21 fe ff ff       	callq  400d28 <_ZN4Node6insertEPS_>
+	head->insert(new Node());
+  400f07:	bf 28 00 00 00       	mov    $0x28,%edi
+  400f0c:	e8 1f fc ff ff       	callq  400b30 <_Znwm@plt>
+  400f11:	48 89 c3             	mov    %rax,%rbx
+  400f14:	be 00 00 00 00       	mov    $0x0,%esi
+  400f19:	48 89 df             	mov    %rbx,%rdi
+  400f1c:	e8 bf fd ff ff       	callq  400ce0 <_ZN4NodeC1Ei>
+  400f21:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400f25:	48 89 de             	mov    %rbx,%rsi
+  400f28:	48 89 c7             	mov    %rax,%rdi
+  400f2b:	e8 f8 fd ff ff       	callq  400d28 <_ZN4Node6insertEPS_>
+	head->insert(new Node());
+  400f30:	bf 28 00 00 00       	mov    $0x28,%edi
+  400f35:	e8 f6 fb ff ff       	callq  400b30 <_Znwm@plt>
+  400f3a:	48 89 c3             	mov    %rax,%rbx
+  400f3d:	be 00 00 00 00       	mov    $0x0,%esi
+  400f42:	48 89 df             	mov    %rbx,%rdi
+  400f45:	e8 96 fd ff ff       	callq  400ce0 <_ZN4NodeC1Ei>
+  400f4a:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400f4e:	48 89 de             	mov    %rbx,%rsi
+  400f51:	48 89 c7             	mov    %rax,%rdi
+  400f54:	e8 cf fd ff ff       	callq  400d28 <_ZN4Node6insertEPS_>
+	head->insert(new Node());
+  400f59:	bf 28 00 00 00       	mov    $0x28,%edi
+  400f5e:	e8 cd fb ff ff       	callq  400b30 <_Znwm@plt>
+  400f63:	48 89 c3             	mov    %rax,%rbx
+  400f66:	be 00 00 00 00       	mov    $0x0,%esi
+  400f6b:	48 89 df             	mov    %rbx,%rdi
+  400f6e:	e8 6d fd ff ff       	callq  400ce0 <_ZN4NodeC1Ei>
+  400f73:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400f77:	48 89 de             	mov    %rbx,%rsi
+  400f7a:	48 89 c7             	mov    %rax,%rdi
+  400f7d:	e8 a6 fd ff ff       	callq  400d28 <_ZN4Node6insertEPS_>
+	head->iterate("");
+  400f82:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  400f86:	48 89 c7             	mov    %rax,%rdi
+  400f89:	e8 82 fb ff ff       	callq  400b10 <_ZNSaIcEC1Ev@plt>
+  400f8e:	48 8d 55 cb          	lea    -0x35(%rbp),%rdx
+  400f92:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400f96:	be 9b 12 40 00       	mov    $0x40129b,%esi
+  400f9b:	48 89 c7             	mov    %rax,%rdi
+  400f9e:	e8 1d fb ff ff       	callq  400ac0 <_ZNSsC1EPKcRKSaIcE@plt>
+  400fa3:	48 8d 55 d0          	lea    -0x30(%rbp),%rdx
+  400fa7:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400fab:	48 89 d6             	mov    %rdx,%rsi
+  400fae:	48 89 c7             	mov    %rax,%rdi
+  400fb1:	e8 cc fd ff ff       	callq  400d82 <_ZN4Node7iterateESs>
+  400fb6:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  400fba:	48 89 c7             	mov    %rax,%rdi
+  400fbd:	e8 ee fa ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  400fc2:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  400fc6:	48 89 c7             	mov    %rax,%rdi
+  400fc9:	e8 12 fb ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+	Node *iter = head;
+  400fce:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  400fd2:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+	while(iter) {
+  400fd6:	e9 8c 00 00 00       	jmpq   401067 <main+0x1d6>
+		std::cout << "Iterating parent node " << std::endl;
+  400fdb:	be 9c 12 40 00       	mov    $0x40129c,%esi
+  400fe0:	bf 20 21 60 00       	mov    $0x602120,%edi
+  400fe5:	e8 b6 fa ff ff       	callq  400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400fea:	be 00 0b 40 00       	mov    $0x400b00,%esi
+  400fef:	48 89 c7             	mov    %rax,%rdi
+  400ff2:	e8 f9 fa ff ff       	callq  400af0 <_ZNSolsEPFRSoS_E@plt>
+		NestedNode *childIter = &(iter->child);
+  400ff7:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  400ffb:	48 83 c0 10          	add    $0x10,%rax
+  400fff:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+		for(int i = 0; i < 5; i++){
+  401003:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+  40100a:	eb 49                	jmp    401055 <main+0x1c4>
+			std::cout << "\tinserting child" << std::endl;
+  40100c:	be b3 12 40 00       	mov    $0x4012b3,%esi
+  401011:	bf 20 21 60 00       	mov    $0x602120,%edi
+  401016:	e8 85 fa ff ff       	callq  400aa0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  40101b:	be 00 0b 40 00       	mov    $0x400b00,%esi
+  401020:	48 89 c7             	mov    %rax,%rdi
+  401023:	e8 c8 fa ff ff       	callq  400af0 <_ZNSolsEPFRSoS_E@plt>
+			childIter->insert(new NestedNode());
+  401028:	bf 10 00 00 00       	mov    $0x10,%edi
+  40102d:	e8 fe fa ff ff       	callq  400b30 <_Znwm@plt>
+  401032:	48 89 c3             	mov    %rax,%rbx
+  401035:	be 00 00 00 00       	mov    $0x0,%esi
+  40103a:	48 89 df             	mov    %rbx,%rdi
+  40103d:	e8 fc fb ff ff       	callq  400c3e <_ZN10NestedNodeC1Ei>
+  401042:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  401046:	48 89 de             	mov    %rbx,%rsi
+  401049:	48 89 c7             	mov    %rax,%rdi
+  40104c:	e8 1d fc ff ff       	callq  400c6e <_ZN10NestedNode6insertEPS_>
+	head->iterate("");
+	Node *iter = head;
+	while(iter) {
+		std::cout << "Iterating parent node " << std::endl;
+		NestedNode *childIter = &(iter->child);
+		for(int i = 0; i < 5; i++){
+  401051:	83 45 cc 01          	addl   $0x1,-0x34(%rbp)
+  401055:	83 7d cc 04          	cmpl   $0x4,-0x34(%rbp)
+  401059:	7e b1                	jle    40100c <main+0x17b>
+			std::cout << "\tinserting child" << std::endl;
+			childIter->insert(new NestedNode());
+		}
+		iter = iter->pnext;
+  40105b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  40105f:	48 8b 40 08          	mov    0x8(%rax),%rax
+  401063:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+	head->insert(new Node());
+	head->insert(new Node());
+	head->insert(new Node());
+	head->iterate("");
+	Node *iter = head;
+	while(iter) {
+  401067:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  40106c:	0f 85 69 ff ff ff    	jne    400fdb <main+0x14a>
+			std::cout << "\tinserting child" << std::endl;
+			childIter->insert(new NestedNode());
+		}
+		iter = iter->pnext;
+	}
+	head->iterate("");
+  401072:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  401076:	48 89 c7             	mov    %rax,%rdi
+  401079:	e8 92 fa ff ff       	callq  400b10 <_ZNSaIcEC1Ev@plt>
+  40107e:	48 8d 55 cb          	lea    -0x35(%rbp),%rdx
+  401082:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  401086:	be 9b 12 40 00       	mov    $0x40129b,%esi
+  40108b:	48 89 c7             	mov    %rax,%rdi
+  40108e:	e8 2d fa ff ff       	callq  400ac0 <_ZNSsC1EPKcRKSaIcE@plt>
+  401093:	48 8d 55 d0          	lea    -0x30(%rbp),%rdx
+  401097:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  40109b:	48 89 d6             	mov    %rdx,%rsi
+  40109e:	48 89 c7             	mov    %rax,%rdi
+  4010a1:	e8 dc fc ff ff       	callq  400d82 <_ZN4Node7iterateESs>
+  4010a6:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4010aa:	48 89 c7             	mov    %rax,%rdi
+  4010ad:	e8 fe f9 ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  4010b2:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  4010b6:	48 89 c7             	mov    %rax,%rdi
+  4010b9:	e8 22 fa ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+}
+  4010be:	b8 00 00 00 00       	mov    $0x0,%eax
+  4010c3:	eb 56                	jmp    40111b <main+0x28a>
+  4010c5:	48 89 c3             	mov    %rax,%rbx
+	printf("Head : %p, &next : %p, &data : %p\n", head, &head->pnext, &head->data);
+	head->insert(new Node());
+	head->insert(new Node());
+	head->insert(new Node());
+	head->insert(new Node());
+	head->iterate("");
+  4010c8:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4010cc:	48 89 c7             	mov    %rax,%rdi
+  4010cf:	e8 dc f9 ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  4010d4:	eb 03                	jmp    4010d9 <main+0x248>
+  4010d6:	48 89 c3             	mov    %rax,%rbx
+  4010d9:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  4010dd:	48 89 c7             	mov    %rax,%rdi
+  4010e0:	e8 fb f9 ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+  4010e5:	48 89 d8             	mov    %rbx,%rax
+  4010e8:	48 89 c7             	mov    %rax,%rdi
+  4010eb:	e8 50 fa ff ff       	callq  400b40 <_Unwind_Resume@plt>
+  4010f0:	48 89 c3             	mov    %rax,%rbx
+			std::cout << "\tinserting child" << std::endl;
+			childIter->insert(new NestedNode());
+		}
+		iter = iter->pnext;
+	}
+	head->iterate("");
+  4010f3:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  4010f7:	48 89 c7             	mov    %rax,%rdi
+  4010fa:	e8 b1 f9 ff ff       	callq  400ab0 <_ZNSsD1Ev@plt>
+  4010ff:	eb 03                	jmp    401104 <main+0x273>
+  401101:	48 89 c3             	mov    %rax,%rbx
+  401104:	48 8d 45 cb          	lea    -0x35(%rbp),%rax
+  401108:	48 89 c7             	mov    %rax,%rdi
+  40110b:	e8 d0 f9 ff ff       	callq  400ae0 <_ZNSaIcED1Ev@plt>
+  401110:	48 89 d8             	mov    %rbx,%rax
+  401113:	48 89 c7             	mov    %rax,%rdi
+  401116:	e8 25 fa ff ff       	callq  400b40 <_Unwind_Resume@plt>
+}
+  40111b:	48 83 c4 38          	add    $0x38,%rsp
+  40111f:	5b                   	pop    %rbx
+  401120:	5d                   	pop    %rbp
+  401121:	c3                   	retq   
+
+0000000000401122 <_Z41__static_initialization_and_destruction_0ii>:
+  401122:	55                   	push   %rbp
+  401123:	48 89 e5             	mov    %rsp,%rbp
+  401126:	48 83 ec 10          	sub    $0x10,%rsp
+  40112a:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  40112d:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  401130:	83 7d fc 01          	cmpl   $0x1,-0x4(%rbp)
+  401134:	75 27                	jne    40115d <_Z41__static_initialization_and_destruction_0ii+0x3b>
+  401136:	81 7d f8 ff ff 00 00 	cmpl   $0xffff,-0x8(%rbp)
+  40113d:	75 1e                	jne    40115d <_Z41__static_initialization_and_destruction_0ii+0x3b>
+  extern wostream wclog;	/// Linked to standard error (buffered)
+#endif
+  //@}
+
+  // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  static ios_base::Init __ioinit;
+  40113f:	bf 31 22 60 00       	mov    $0x602231,%edi
+  401144:	e8 17 f9 ff ff       	callq  400a60 <_ZNSt8ios_base4InitC1Ev@plt>
+  401149:	ba a8 20 60 00       	mov    $0x6020a8,%edx
+  40114e:	be 31 22 60 00       	mov    $0x602231,%esi
+  401153:	bf 90 0a 40 00       	mov    $0x400a90,%edi
+  401158:	e8 23 f9 ff ff       	callq  400a80 <__cxa_atexit@plt>
+  40115d:	c9                   	leaveq 
+  40115e:	c3                   	retq   
+
+000000000040115f <_GLOBAL__sub_I__ZN10NestedNodeC2Ei>:
+  40115f:	55                   	push   %rbp
+  401160:	48 89 e5             	mov    %rsp,%rbp
+  401163:	be ff ff 00 00       	mov    $0xffff,%esi
+  401168:	bf 01 00 00 00       	mov    $0x1,%edi
+  40116d:	e8 b0 ff ff ff       	callq  401122 <_Z41__static_initialization_and_destruction_0ii>
+  401172:	5d                   	pop    %rbp
+  401173:	c3                   	retq   
+
+0000000000401174 <_ZN4Node4fakeEPS_>:
+    // Constructor taking initial value:
+    Node( int value = 0 );
+
+    // Insert node in front:
+    void insert( Node* newNode );
+	virtual void fake(Node* newNode)
+  401174:	55                   	push   %rbp
+  401175:	48 89 e5             	mov    %rsp,%rbp
+  401178:	48 83 ec 10          	sub    $0x10,%rsp
+  40117c:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  401180:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+	{
+		this->insert(newNode);
+  401184:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  401188:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  40118c:	48 89 d6             	mov    %rdx,%rsi
+  40118f:	48 89 c7             	mov    %rax,%rdi
+  401192:	e8 91 fb ff ff       	callq  400d28 <_ZN4Node6insertEPS_>
+	};
+  401197:	c9                   	leaveq 
+  401198:	c3                   	retq   
+  401199:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000004011a0 <__libc_csu_init>:
+  4011a0:	41 57                	push   %r15
+  4011a2:	41 89 ff             	mov    %edi,%r15d
+  4011a5:	41 56                	push   %r14
+  4011a7:	49 89 f6             	mov    %rsi,%r14
+  4011aa:	41 55                	push   %r13
+  4011ac:	49 89 d5             	mov    %rdx,%r13
+  4011af:	41 54                	push   %r12
+  4011b1:	4c 8d 25 30 0c 20 00 	lea    0x200c30(%rip),%r12        # 601de8 <__frame_dummy_init_array_entry>
+  4011b8:	55                   	push   %rbp
+  4011b9:	48 8d 2d 38 0c 20 00 	lea    0x200c38(%rip),%rbp        # 601df8 <__init_array_end>
+  4011c0:	53                   	push   %rbx
+  4011c1:	4c 29 e5             	sub    %r12,%rbp
+  4011c4:	31 db                	xor    %ebx,%ebx
+  4011c6:	48 c1 fd 03          	sar    $0x3,%rbp
+  4011ca:	48 83 ec 08          	sub    $0x8,%rsp
+  4011ce:	e8 35 f8 ff ff       	callq  400a08 <_init>
+  4011d3:	48 85 ed             	test   %rbp,%rbp
+  4011d6:	74 1e                	je     4011f6 <__libc_csu_init+0x56>
+  4011d8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4011df:	00 
+  4011e0:	4c 89 ea             	mov    %r13,%rdx
+  4011e3:	4c 89 f6             	mov    %r14,%rsi
+  4011e6:	44 89 ff             	mov    %r15d,%edi
+  4011e9:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  4011ed:	48 83 c3 01          	add    $0x1,%rbx
+  4011f1:	48 39 eb             	cmp    %rbp,%rbx
+  4011f4:	75 ea                	jne    4011e0 <__libc_csu_init+0x40>
+  4011f6:	48 83 c4 08          	add    $0x8,%rsp
+  4011fa:	5b                   	pop    %rbx
+  4011fb:	5d                   	pop    %rbp
+  4011fc:	41 5c                	pop    %r12
+  4011fe:	41 5d                	pop    %r13
+  401200:	41 5e                	pop    %r14
+  401202:	41 5f                	pop    %r15
+  401204:	c3                   	retq   
+  401205:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  40120c:	00 00 00 00 
+
+0000000000401210 <__libc_csu_fini>:
+  401210:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000401214 <_fini>:
+  401214:	48 83 ec 08          	sub    $0x8,%rsp
+  401218:	48 83 c4 08          	add    $0x8,%rsp
+  40121c:	c3                   	retq   

@@ -1,0 +1,11 @@
+digraph G {
+	"dsnaming.DsOliMetaBoxGraphVertexEP@24d9a48c" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@32f6a701" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 544 tag: ptr off: 0:16</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (202)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexEP@24d9a48c" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@d9392a8" [color = "#CC9900", label = <<TABLE BORDER="0" ALIGN="left" COLOR="black" CELLBORDER="0"  CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 544 tag: ptr off: 0:8</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (202)</TD></TR></TABLE>>]
+	"dsnaming.DsOliMetaBoxGraphVertexBoxes@d9392a8" -> "dsnaming.DsOliMetaBoxGraphVertexBoxes@32f6a701" [dir = none, label = <<TABLE BORDER="0" ALIGN="left" BGCOLOR="#CCCCCC" COLOR="black" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0"><TR><TD COLSPAN="2">t: 544 tag: ovl off: 16:8</TD></TR><TR><TD ALIGN="left" BGCOLOR="#66CCFF">BT</TD><TD ALIGN="left" BGCOLOR="#66CCFF">1228 (614)</TD></TR><TR><TD ALIGN="left" BGCOLOR="#CC9900">ccNoClassification</TD><TD ALIGN="left" BGCOLOR="#CC9900">0 (614)</TD></TR></TABLE>>, color = "#66CCFF"]
+	subgraph connected_vertices {
+		rankdir = LR
+		"dsnaming.DsOliMetaBoxGraphVertexEP@24d9a48c"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexEP@24d9a48c</TD></TR><TR><TD COLSPAN="2">ep: 111 start: 544 end: 867 aggCnt: 202</TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@32f6a701"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@32f6a701</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@16): dont_care: Set(15, 5) </TD></TR></TABLE>>, shape = none]
+		"dsnaming.DsOliMetaBoxGraphVertexBoxes@d9392a8"  [label = <<TABLE><TR><TD COLSPAN="2">dsnaming.DsOliMetaBoxGraphVertexBoxes@d9392a8</TD></TR><TR><TD COLSPAN="2">struct type_0: field(@8): dont_care: Set(13, 8) </TD></TR></TABLE>>, shape = none]
+	}
+}
